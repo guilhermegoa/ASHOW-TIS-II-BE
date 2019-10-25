@@ -1,3 +1,5 @@
+package business;
+
 public class Proposta {
 	private boolean artistaAceitou;
 	private boolean contratanteAceitou;
@@ -8,14 +10,14 @@ public class Proposta {
 		contratanteAceitou = false;
 	}
 
-	private Contrato gerarContrato(String descricao){
-		if(artistaAceitou && contratanteAceitou) {
-			Contrato contrato = new Contrato(this.valor, descricao);
-		}
-		else {
-			return null;
-		}
-	}
+//	private Contrato gerarContrato(String descricao){
+//		if(artistaAceitou && contratanteAceitou) {
+//			Contrato contrato = new Contrato(this.valor, descricao);
+//		}
+//		else {
+//			return null;
+//		}
+//	}
 	
 	public boolean isArtistaAceitou() {
 		return artistaAceitou;

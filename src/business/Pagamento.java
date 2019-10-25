@@ -1,3 +1,5 @@
+package business;
+
 public class Pagamento {
     private static int pagamentoCancelados = 0;
     private String formaPagamento;

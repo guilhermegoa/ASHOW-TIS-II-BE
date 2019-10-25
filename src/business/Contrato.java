@@ -1,3 +1,5 @@
+package business;
+
 public class Contrato {
     private static int contadorContratos = 0;
     private Double valor;
@@ -8,6 +10,9 @@ public class Contrato {
     private Contratante contratante;
     private Proposta proposta;
     private Evento evento;
+
+    public Contrato(double valor, String descricao) {
+    }
 
     public static int getContadorContratos() {
         return contadorContratos;
