@@ -40,7 +40,7 @@ public class EventoDAO implements IDAO<Evento, String> {
             while (fis.available() > 0) {
                 evento = (Evento) inputFile.readObject();
 
-                if (ID.equals(evento.getId())) {
+                if (ID.equals(evento.getNome())) {
                     return evento;
                 }
             }
