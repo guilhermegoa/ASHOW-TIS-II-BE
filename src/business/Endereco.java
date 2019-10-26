@@ -1,6 +1,8 @@
 package business;
 
-public class Endereco {
+import java.io.Serializable;
+
+public class Endereco implements Serializable {
 
 	private String numero;
 	private String bairro;
@@ -83,5 +85,11 @@ public class Endereco {
 
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+	
+	@Override
+	public String toString() {
+		return "Rua: " + this.Rua + ", Número: " + this.numero + ", " + this.bairro + 
+				", " + this.cidade + " - " + this.uf + "\nCEP: " + this.cep + "\nDescricao: " + this.complemento;
 	}
 }

@@ -1,5 +1,6 @@
 package dao;
 
+import business.Evento;
 import business.Usuario;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,7 +29,7 @@ public class UsuarioDAO implements IDAO<Usuario, String> {
         try {
             outputFile.writeObject(usuario);
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar o produto '" + usuario.getNome() + "' no disco!");
+            System.out.println("ERRO ao gravar o user '" + usuario.getNome() + "' no disco!");
             e.printStackTrace();
         }
     }
@@ -45,7 +46,7 @@ public class UsuarioDAO implements IDAO<Usuario, String> {
                 }
             }
         } catch (Exception e) {
-            System.out.println("ERRO ao ler o produto '" + email + "' do disco!");
+            System.out.println("ERRO ao ler o user '" + email + "' do disco!");
             e.printStackTrace();
         }
         return null;
@@ -61,28 +62,34 @@ public class UsuarioDAO implements IDAO<Usuario, String> {
                 usuarios.add(usuario);
             }
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar produto no disco!");
+            System.out.println("ERRO ao gravar user no disco!");
             e.printStackTrace();
         }
         return usuarios;
     }
-
-    public void update(Usuario p) {
+    
+    public boolean update(Usuario p) {
+    	int valido = 0;
         List<Usuario> usuarios = getAll();
         int index = usuarios.indexOf(p);
         if (index != -1) {
-            usuarios.set(index, p);
+        	valido = 1;
+        	usuarios.set(index, p);
         }
         saveToFile(usuarios);
+        return valido == 1? true:false;
     }
 
-    public void remove(Usuario p) {
+    public boolean remove(Usuario p) {
+    	int valido = 0;
         List<Usuario> usuarios = getAll();
         int index = usuarios.indexOf(p);
         if (index != -1) {
-            usuarios.remove(index);
+        	valido = 1;
+        	usuarios.remove(index);
         }
         saveToFile(usuarios);
+        return valido == 1? true:false;
     }
 
     private void saveToFile(List<Usuario> usuarios) {
@@ -96,7 +103,7 @@ public class UsuarioDAO implements IDAO<Usuario, String> {
             }
             outputFile.flush();
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar produto no disco!");
+            System.out.println("ERRO ao gravar user no disco!");
             e.printStackTrace();
         }
     }

@@ -28,7 +28,7 @@ public class EventoDAO implements IDAO<Evento, String> {
         try {
             outputFile.writeObject(evento);
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar o produto '" + evento.getEstilo() + "' no disco!");
+            System.out.println("ERRO ao gravar o evento '" + evento.getEstilo() + "' no disco!");
             e.printStackTrace();
         }
     }
@@ -45,7 +45,7 @@ public class EventoDAO implements IDAO<Evento, String> {
                 }
             }
         } catch (Exception e) {
-            System.out.println("ERRO ao ler o produto '" + ID + "' do disco!");
+            System.out.println("ERRO ao ler o evento '" + ID + "' do disco!");
             e.printStackTrace();
         }
         return null;
@@ -61,28 +61,34 @@ public class EventoDAO implements IDAO<Evento, String> {
                 eventos.add(evento);
             }
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar produto no disco!");
+            System.out.println("ERRO ao gravar evento no disco!");
             e.printStackTrace();
         }
         return eventos;
     }
 
-    public void update(Evento p) {
+    public boolean update(Evento p) {
+    	int valido = 0;
         List<Evento> eventos = getAll();
         int index = eventos.indexOf(p);
         if (index != -1) {
+        	valido = 1;
             eventos.set(index, p);
         }
         saveToFile(eventos);
+        return valido == 1? true:false;
     }
 
-    public void remove(Evento p) {
+    public boolean remove(Evento p) {
+    	int valido = 0;
         List<Evento> eventos = getAll();
         int index = eventos.indexOf(p);
         if (index != -1) {
+        	valido = 1;
             eventos.remove(index);
         }
         saveToFile(eventos);
+        return valido == 1? true:false;
     }
 
     private void saveToFile(List<Evento> eventos) {
@@ -96,7 +102,7 @@ public class EventoDAO implements IDAO<Evento, String> {
             }
             outputFile.flush();
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar produto no disco!");
+            System.out.println("ERRO ao gravar evento no disco!");
             e.printStackTrace();
         }
     }

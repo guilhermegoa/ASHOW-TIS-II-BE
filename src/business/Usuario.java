@@ -1,6 +1,8 @@
 package business;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Random;
 
 public abstract class Usuario implements Serializable {
@@ -9,23 +11,42 @@ public abstract class Usuario implements Serializable {
     private String email;
     private String nome;
     private int ID;
+    private int qntAvaliacoes;
+    private int somaNotas;
     private float mediaAvaliacao;
     private Endereco endereco;
-
+    Collection<Evento> eventos = new HashSet<Evento>();
+    Collection<Avaliacao> avaliacoes = new HashSet<Avaliacao>();
+ 
     public Usuario(String nome, String senha, String email) {
         setNome(nome);
-        setSenha(senha);
+        this.senha = senha;
         setEmail(email);
         somaUmContadorUsuario();
+        this.ID = contador;
     }
 
     private void somaUmContadorUsuario() {
         setContador(getContador() + 1);
     }
 
-    public abstract void addAvaliacao();
+    public boolean addAvaliacao(Avaliacao a) {
+    	for(Evento evento: eventos) {
+    		if(evento.equals(a.getEvento())) {
+    			qntAvaliacoes++;
+    			somaNotas += a.getNotaFinal();
+    			calculaMediaAvaliacao();
+    			avaliacoes.add(a);
+    			return true;
+    		}
+    	}
+    	return false;
+    }
 
-    public abstract float calculaMediaAvaliacao();
+    public float calculaMediaAvaliacao() {
+    	this.mediaAvaliacao = somaNotas/qntAvaliacoes;
+    	return mediaAvaliacao;
+    }
 
     public static int getContador() {
         return contador;
@@ -33,14 +54,6 @@ public abstract class Usuario implements Serializable {
 
     public static void setContador(int contador) {
         Usuario.contador = contador;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public String getEmail() {
@@ -54,6 +67,7 @@ public abstract class Usuario implements Serializable {
     public String getNome() {
         return nome;
     }
+    
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -61,10 +75,6 @@ public abstract class Usuario implements Serializable {
 
     public int getID() {
         return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
     }
 
     public float getMediaAvaliacao() {
@@ -83,5 +93,31 @@ public abstract class Usuario implements Serializable {
         this.endereco = endereco;
     }
 
+    @Override
+    public String toString() {
+    	return "\nUsuário: " + this.ID + "\nNome: " + this.nome + "\nE-mail: " + this.email + 
+    			"\nMédia: " + this.mediaAvaliacao;
+    }
+
+	public StringBuilder verEventos() {
+		StringBuilder string = new StringBuilder();
+		for(Evento evento: eventos) {
+			string.append(evento + "\n");
+		}
+		return string;
+	}
+
+	public StringBuilder verAvaliacoes() {
+		StringBuilder string = new StringBuilder();
+		for(Avaliacao a: avaliacoes) {
+			string.append(a + "\n");
+		}
+		return string;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.email.equals(((Usuario) obj).getEmail());
+	}
 
 }

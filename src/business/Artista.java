@@ -13,8 +13,9 @@ public class Artista extends Usuario implements Serializable {
     private int numeroEventos;
     private float valorPadrao;
 
-    public Artista(String nome, String senha, String email, String estilo, String tipoArtista) {
+    public Artista(String nome, String nomeArtistico, String senha, String email, String estilo, String tipoArtista) {
         super(nome, senha, email);
+        setNomeArtistico(nomeArtistico);
         setEstilo(estilo);
         setTipoArtista(tipoArtista);
         somaUMContadorArtista();
@@ -28,22 +29,25 @@ public class Artista extends Usuario implements Serializable {
         return "0";
     }
 
-    public void addEventos(Evento evento) {
-
+    public boolean addEventos(Evento evento) {
+    	if(evento.isOpen()) {
+    	eventos.add(evento);
+    	evento.aumentarArtistas();
+		numeroEventos++;
+		return true;
+    	}
+    	return false;
     }
 
     public boolean removerEvento(Evento evento) {
         return false;
     }
-
+    
     @Override
-    public void addAvaliacao() {
-
-    }
-
-    @Override
-    public float calculaMediaAvaliacao() {
-        return 0;
+    public String toString() {
+    	return super.toString() + "\nNome artístico: " +  this.nomeArtistico + "\nTipo de artista: " + this.tipoArtista + 
+    			"\nEstilo: " + this.estilo + "\nContato: " + this.contatoPublico + "\nDescricao: " + this.descricao + 
+    			"\nNúmero de eventos: " + this.numeroEventos + "\nPopularidade: " + this.popularidade;
     }
 
     public static int getContadorArtistas() {

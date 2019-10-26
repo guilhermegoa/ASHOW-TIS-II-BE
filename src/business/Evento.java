@@ -10,10 +10,13 @@ public class Evento implements Serializable {
     private int quantidadeArtistas;
     private double valor;
     private String estilo;
+    private String nome;
     private boolean open;
     private LocalDateTime data;
+    private Endereco endereco;
 
-    public Evento(int capacidadeEsperada, double valor, String estilo, LocalDateTime data) {
+    public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco) {
+    	setNome(nome);
         setValor(valor);
         setEstilo(estilo);
         setData(data);
@@ -22,9 +25,31 @@ public class Evento implements Serializable {
         setId(getContadorEvento());
         setOpen(true);
         setQuantidadeArtistas(0);
-    }
+        setEndereco(endereco);
+    }  
 
-    private void somaUMContadorEvento() {
+    public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+
+
+	private void somaUMContadorEvento() {
         setContadorEvento(getContadorEvento() + 1);
     }
 
@@ -111,4 +136,16 @@ public class Evento implements Serializable {
     public void setQuantidadeArtistas(int quantidadeArtistas) {
         this.quantidadeArtistas = quantidadeArtistas;
     }
+    
+    @Override
+    public String toString() {
+    	return "Evento: " + this.id + "\nNome: " + this.nome + "\nEstilo: " + this.estilo 
+    			+ "\nValor: " + this.valor + "\nCapacidade Esperada: " + this.capacidadeEsperada
+    			+ "\n\nEndereco:\n" + this.endereco; 
+    }
+    
+    @Override
+	public boolean equals(Object obj) {
+		return this.nome.equals(((Evento) obj).getNome());
+	}
 }
