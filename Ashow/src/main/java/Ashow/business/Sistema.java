@@ -30,16 +30,16 @@ public class Sistema {
             Evento evento = new Evento("Testando", 120, 1200.00, "Rock", LocalDateTime.now(), e);
             Avaliacao avaliacao = new Avaliacao("Muito Bom!", 5, evento);
 
-            Contratante contratante1 = new Contratante("Helen","1234","whu@united.br");
+            Contratante contratante1 = new Contratante("Helen", "1234", "whu@united.br");
             contratante1.criarEvento(evento);
             contratante1.addAvaliacao(avaliacao);
 
             contratanteDao.add(contratante1);
-            contratanteDao.add(new Contratante("Guilherme","1234","gui@gui.br"));
-            contratanteDao.add(new Contratante("Arthur","1234","aaa@aaa.br"));
-            contratanteDao.add(new Contratante("Daniel","1234","ddd@ddd.br"));
-            contratanteDao.add(new Contratante("Matheus","1234","ffm@ffm.br"));
-            contratanteDao.add(new Contratante("Gulio","1234","gugu@gugu.br"));
+            contratanteDao.add(new Contratante("Guilherme", "1234", "gui@gui.br"));
+            contratanteDao.add(new Contratante("Arthur", "1234", "aaa@aaa.br"));
+            contratanteDao.add(new Contratante("Daniel", "1234", "ddd@ddd.br"));
+            contratanteDao.add(new Contratante("Matheus", "1234", "ffm@ffm.br"));
+            contratanteDao.add(new Contratante("Gulio", "1234", "gugu@gugu.br"));
         } catch (IOException e) {
         }
         return contratanteDao;
@@ -60,5 +60,7 @@ public class Sistema {
 
     public Sistema() {
 
+        UsuarioDAO artistaDao = initArtista();
+        UsuarioDAO contratanteDao = initContratante();
     }
 }

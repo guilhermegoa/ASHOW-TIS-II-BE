@@ -13,6 +13,7 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -32,7 +33,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ASHOW-TIS-II-BE" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -88,7 +89,8 @@
       <workItem from="1572138881215" duration="3235000" />
       <workItem from="1572142206963" duration="1032000" />
       <workItem from="1572143280562" duration="11731000" />
-      <workItem from="1572194506338" duration="9022000" />
+      <workItem from="1572194506338" duration="9863000" />
+      <workItem from="1572207368578" duration="1860000" />
     </task>
     <servers />
   </component>
@@ -107,5 +109,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
   </component>
 </project>
