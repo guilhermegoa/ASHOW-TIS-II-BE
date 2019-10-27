@@ -1,6 +1,5 @@
 package Ashow.service;
 
-import Ashow.business.Sistema;
 import Ashow.business.Usuario;
 
 import javax.ws.rs.*;
