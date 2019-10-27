@@ -13,103 +13,109 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioDAO implements IDao<Usuario, String> {
-
+    private List<Usuario> infos;
     private File file;
     private FileOutputStream fos;
     private ObjectOutputStream outputFile;
 
     public UsuarioDAO(String filename) throws IOException {
+
+        infos = new ArrayList<Usuario>();
+
         file = new File(filename);
-        fos = new FileOutputStream(file, false);
-        outputFile = new ObjectOutputStream(fos);
+        readFromFile();
     }
 
-    public void add(Usuario usuario) {
+    public void add(Usuario user) {
         try {
-            outputFile.writeObject(usuario);
+            infos.add(user);
+            saveToFile();
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar o user '" + usuario.getNome() + "' no disco!");
+            System.out.println("ERRO ao gravar o produto '" + user.getNome() + "' no disco!");
             e.printStackTrace();
         }
     }
 
-    public Usuario get(String email) {
-        Usuario usuario = null;
+    public Usuario get(String chave) {
+        Usuario user = null;
 
-        try (FileInputStream fis = new FileInputStream(file); ObjectInputStream inputFile = new ObjectInputStream(fis)) {
+        try (FileInputStream fis = new FileInputStream(file);
+             ObjectInputStream inputFile = new ObjectInputStream(fis)) {
             while (fis.available() > 0) {
-                usuario = (Usuario) inputFile.readObject();
+                user = (Usuario) inputFile.readObject();
 
-                if (email.equals(usuario.getEmail())) {
-                    return usuario;
+                if (chave.equals(user.getNome())) {
+                    return user;
                 }
             }
         } catch (Exception e) {
-            System.out.println("ERRO ao ler o user '" + email + "' do disco!");
+            System.out.println("ERRO ao ler o produto '" + chave + "' do disco!");
             e.printStackTrace();
         }
         return null;
     }
 
-    public List<Usuario> getAll() {
-        List<Usuario> usuarios = new ArrayList<Usuario>();
-        Usuario usuario = null;
-        try (FileInputStream fis = new FileInputStream(file); ObjectInputStream inputFile = new ObjectInputStream(fis)) {
-
-            while (fis.available() > 0) {
-                usuario = (Usuario) inputFile.readObject();
-                usuarios.add(usuario);
-            }
-        } catch (Exception e) {
-            System.out.println("ERRO ao gravar user no disco!");
-            e.printStackTrace();
-        }
-        return usuarios;
-    }
-
     public boolean update(Usuario p) {
-        int valido = 0;
-        List<Usuario> usuarios = getAll();
-        int index = usuarios.indexOf(p);
+        int index = infos.indexOf(p);
         if (index != -1) {
-            valido = 1;
-            usuarios.set(index, p);
+            infos.set(index, p);
+            saveToFile();
         }
-        saveToFile(usuarios);
-        return valido == 1 ? true : false;
+        return false;
     }
 
     public boolean remove(Usuario p) {
-        int valido = 0;
-        List<Usuario> usuarios = getAll();
-        int index = usuarios.indexOf(p);
+        int index = infos.indexOf(p);
         if (index != -1) {
-            valido = 1;
-            usuarios.remove(index);
+            infos.remove(index);
+            saveToFile();
         }
-        saveToFile(usuarios);
-        return valido == 1 ? true : false;
+        return false;
     }
 
-    private void saveToFile(List<Usuario> usuarios) {
+    public List<Usuario> getAll() {
+        return infos;
+    }
+
+    private List<Usuario> readFromFile() {
+        Usuario user = null;
+        try (FileInputStream fis = new FileInputStream(file);
+             ObjectInputStream inputFile = new ObjectInputStream(fis)) {
+
+            while (fis.available() > 0) {
+                user = (Usuario) inputFile.readObject();
+                infos.add(user);
+            }
+        } catch (Exception e) {
+            System.out.println("ERRO ao ler produto no disco!");
+            e.printStackTrace();
+        }
+        return infos;
+    }
+
+    private void saveToFile() {
         try {
             close();
             fos = new FileOutputStream(file, false);
             outputFile = new ObjectOutputStream(fos);
 
-            for (Usuario usuario : usuarios) {
-                outputFile.writeObject(usuario);
+            for (Usuario produto : infos) {
+                outputFile.writeObject(produto);
             }
             outputFile.flush();
         } catch (Exception e) {
-            System.out.println("ERRO ao gravar user no disco!");
+            System.out.println("ERRO ao gravar produto no disco!");
             e.printStackTrace();
         }
     }
 
     private void close() throws IOException {
-        outputFile.close();
-        fos.close();
+        if (outputFile != null ) {
+            outputFile.close();
+            fos.close();
+            outputFile = null;
+            fos = null;
+        }
     }
 
     @Override

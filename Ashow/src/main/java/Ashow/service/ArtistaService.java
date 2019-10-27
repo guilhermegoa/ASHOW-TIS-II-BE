@@ -11,7 +11,7 @@ import java.util.List;
 
 @Path("artista")
 public class ArtistaService {
-    
+
     @GET
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
