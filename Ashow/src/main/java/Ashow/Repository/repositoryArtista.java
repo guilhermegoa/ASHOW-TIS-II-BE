@@ -2,6 +2,7 @@ package Ashow.Repository;
 
 import Ashow.business.Artista;
 import Ashow.business.Usuario;
+import Ashow.dao.Dao;
 import Ashow.interfac.IDao;
 import Ashow.interfac.IRepository;
 

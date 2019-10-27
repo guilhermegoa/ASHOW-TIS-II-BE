@@ -1,7 +1,5 @@
 package Ashow.interfac;
 
-import Ashow.dao.UsuarioDAO;
-
 import javax.ws.rs.core.Response;
 import java.util.List;
 
