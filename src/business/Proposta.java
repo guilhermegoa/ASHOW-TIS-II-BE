@@ -4,6 +4,8 @@ public class Proposta {
 	private boolean artistaAceitou;
 	private boolean contratanteAceitou;
 	private double valor;
+	private Artista artista;
+	private Evento evento;
 	
 	public Proposta(){
 		artistaAceitou = false;
