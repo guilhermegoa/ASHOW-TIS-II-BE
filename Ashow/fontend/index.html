@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/Logo.png">
+    <link rel="stylesheet" href="">
+    <title>Ashow</title>
+</head>
+<body>
+    <!-- Container que reserva toda a aplicação -->
+    <div class="container">
+        <!-- Container que reserva o conteúdo: Apresentação -->
+
+        <div class="container-content">
+            <!-- Apresentação -->
+            <div class="content">
+                <article>A <span>Ashow</span> pretende aprimorar o mercado musical, juntando quem
+                    curte uma festa com música ao vivo com o próprio músico, sendo esse de qualquer estilo ou
+                    renome; a plataforma ajuda a realizar seus eventos com <span>segurança</span>, <span>praticidade</span> e <span>qualidade</span> de
+                    música.</article>
+            </div>
+        </div>
+
+        <div class="container-login">
+            <img class="logo-text" src="img/ashowLogoText.png" alt="">
+            <form action="home.html">
+                <div class="input-field">
+                    <input type="text" name="" required="">
+                    <label for="">Usuário</label>
+                </div>
+                <div class="input-field">
+                        <input type="password" name="" required="">
+                        <label for="">Senha</label>
+                </div>
+                <input type="submit" class="insert" value="Login">
+            </form>
+            <button class="cadastrar" onclick="cadastrar()">Cadastrar</button>
+        </div>
+
+    </div>
+
+    <script>
+        function cadastrar(){
+            window.location.href = "cadastro.html";
+            }
+    </script>
+
+    <section>
+        <div class="wave">    </div>
+    </section>
+</body>
+</html>

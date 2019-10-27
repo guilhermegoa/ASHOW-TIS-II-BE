@@ -10,7 +10,7 @@ public interface IDao<T, K> {
 
     public boolean update(T t);
 
-    public boolean remove(K k);
+    public boolean remove(T t);
 
     public List<T> getAll();
 }

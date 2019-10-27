@@ -19,10 +19,10 @@ import java.util.List;
 public class TesteUsuario {
     public static void main(String args[]) throws IOException {
 
-    	//teste de inser��o do usu�rio contratante
+    	//teste de inserção do usuário contratante
         IDAO<Usuario, String> contratanteDAO = new UsuarioDAO("contratante.bin");
         
-        Endereco e = new Endereco("3201998", "Tereza", "13", "Tropical", "Contagem", "MG", "Pr�ximo a uma padaria");
+        Endereco e = new Endereco("3201998", "Tereza", "13", "Tropical", "Contagem", "MG", "Próximo a uma padaria");
         
         Evento evento = new Evento("Testando", 120, 1200.00, "Rock", LocalDateTime.now(), e);
         Avaliacao avaliacao = new Avaliacao("Muito Bom!", 5, evento);
@@ -47,15 +47,15 @@ public class TesteUsuario {
         for (Usuario usuario: usuarios) {
             System.out.println(usuario);
             System.out.println("\nEventos: \n" + usuario.verEventos());
-            System.out.println("\nAvalia��es: \n" + usuario.verAvaliacoes());
+            System.out.println("\nAvaliações: \n" + usuario.verAvaliacoes());
             System.out.println("=====");
         }
 
         System.out.println("---------------------------------------------");
 
-        //teste de inser��o do usu�rio artista
+        //teste de inserção do usuário artista
         IDAO<Usuario, String> artistaDAO = new UsuarioDAO("artista.bin");
-        artistaDAO.add(new Artista("Jo�o", "Nevasca", "ABCD", "joao@neves.br", "Sertanejo", "Solo"));
+        artistaDAO.add(new Artista("João", "Nevasca", "ABCD", "joao@neves.br", "Sertanejo", "Solo"));
 
         List<Usuario> artistas = artistaDAO.getAll();
 
@@ -66,3 +66,4 @@ public class TesteUsuario {
         }
     }
 }
+
