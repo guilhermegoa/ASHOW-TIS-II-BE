@@ -1,5 +1,7 @@
 package Ashow.business;
 
+import Ashow.dao.UtilitarioDoDao;
+
 import java.io.Serializable;
 
 public class Artista extends Usuario implements Serializable {
@@ -121,4 +123,5 @@ public class Artista extends Usuario implements Serializable {
     public void setValorPadrao(float valorPadrao) {
         this.valorPadrao = valorPadrao;
     }
+
 }

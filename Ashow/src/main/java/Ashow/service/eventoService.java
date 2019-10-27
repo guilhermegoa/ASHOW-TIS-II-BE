@@ -6,7 +6,7 @@
 //import java.util.List;
 //
 //public class eventoService {
-//    public class artistaService {
+//    public class ArtistaService {
 //
 //    }
 //        @Path("evento")

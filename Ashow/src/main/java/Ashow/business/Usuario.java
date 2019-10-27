@@ -1,10 +1,12 @@
 package Ashow.business;
 
+import Ashow.dao.UtilitarioDoDao;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
 
-public abstract class Usuario implements Serializable {
+public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> {
     private static int contador = 0;
     private String senha;
     private String email;
@@ -100,10 +102,6 @@ public abstract class Usuario implements Serializable {
         this.nome = nome;
     }
 
-    public int getID() {
-        return ID;
-    }
-
     public float getMediaAvaliacao() {
         return mediaAvaliacao;
     }
@@ -118,6 +116,16 @@ public abstract class Usuario implements Serializable {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    @Override
+    public boolean isID(Integer integer) {
+        return getID() == integer;
+    }
+
+    @Override
+    public Integer getID() {
+        return ID;
     }
 
 }

@@ -1,20 +1,20 @@
 package Ashow.interfac;
 
-import javax.ws.rs.core.Response;
-import java.util.List;
+import Ashow.dao.Dao;
+import Ashow.dao.UtilitarioDoDao;
 
-public interface IRepository<T, K> {
+public interface IRepository<T extends UtilitarioDoDao, K> {
 
-    public Dao inicializarDao();
+    public Dao<T, K> inicializarDao();
 
-    public List<T> getList();
-
-    public T find(K k);
-
-    public Response add(T t);
-
-    public Response update(T t);
-
-    public Response remove(K k);
+//    public List<T> getList();
+//
+//    public T get(K k);
+//
+//    public Response add(T t);
+//
+//    public Response update(T t);
+//
+//    public Response remove(K k);
 
 }

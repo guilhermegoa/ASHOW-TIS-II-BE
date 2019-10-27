@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Dao<T extends UtilitarioDoDao, K> implements IDao<T, K> {
+public class Dao<T extends UtilitarioDoDao, K> implements IDao<T, K>, Serializable {
     private List<T> dados;
     private File file;
     private FileOutputStream fileOutputStream;
