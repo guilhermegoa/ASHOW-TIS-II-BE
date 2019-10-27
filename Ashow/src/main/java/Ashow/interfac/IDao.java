@@ -6,7 +6,7 @@ public interface IDao<T, K> {
 
     public T get(K k);
 
-    public void add(T t);
+    public boolean add(T t);
 
     public boolean update(T t);
 
