@@ -66,7 +66,7 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <finalName>Ashow_form-${project.version}</finalName>
+                    <finalName>Ashow-${project.version}</finalName>
                     <archive>
                         <manifest>
                             <mainClass>Ashow.service.Main</mainClass>
