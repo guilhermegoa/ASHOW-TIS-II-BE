@@ -1,14 +1,9 @@
 package Ashow.dao;
 
-import Ashow.interfac.IDao;
 import Ashow.business.Usuario;
+import Ashow.interfac.IDao;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,9 +14,7 @@ public class UsuarioDAO implements IDao<Usuario, String> {
     private ObjectOutputStream outputFile;
 
     public UsuarioDAO(String filename) throws IOException {
-
         infos = new ArrayList<Usuario>();
-
         file = new File(filename);
         readFromFile();
     }
@@ -110,7 +103,7 @@ public class UsuarioDAO implements IDao<Usuario, String> {
     }
 
     private void close() throws IOException {
-        if (outputFile != null ) {
+        if (outputFile != null) {
             outputFile.close();
             fos.close();
             outputFile = null;
