@@ -1,7 +1,5 @@
 package Ashow.business;
 
-import Ashow.dao.UtilitarioDoDao;
-
 import java.io.Serializable;
 
 public class Artista extends Usuario implements Serializable {
@@ -47,9 +45,9 @@ public class Artista extends Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString() + "\nNome art�stico: " + this.nomeArtistico + "\nTipo de artista: " + this.tipoArtista +
-                "\nEstilo: " + this.estilo + "\nContato: " + this.contatoPublico + "\nDescricao: " + this.descricao +
-                "\nN�mero de eventos: " + this.numeroEventos + "\nPopularidade: " + this.popularidade;
+        return super.toString() + ",\nNome art�stico: \"" + this.nomeArtistico + "\",\nTipo de artista: \"" + this.tipoArtista +
+                "\",\nEstilo: \"" + this.estilo + "\",\nContato: \"" + this.contatoPublico + "\",\nDescricao: \"" + this.descricao +
+                "\",\nN�mero de eventos: " + this.numeroEventos + ",\nPopularidade: \"" + this.popularidade+"\"}";
     }
 
     public static int getContadorArtistas() {

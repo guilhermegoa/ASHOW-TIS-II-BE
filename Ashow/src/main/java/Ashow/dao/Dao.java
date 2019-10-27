@@ -1,13 +1,14 @@
 package Ashow.dao;
 
 import Ashow.interfac.IDao;
+import Ashow.interfac.UtilitarioDoDao;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Dao<T extends UtilitarioDoDao, K> implements IDao<T, K>, Serializable {
+public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Serializable {
     private List<T> dados;
     private File file;
     private FileOutputStream fileOutputStream;
@@ -23,10 +24,9 @@ public class Dao<T extends UtilitarioDoDao, K> implements IDao<T, K>, Serializab
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            while (fileInputStream.available() > 0) {
-                T t = (T) objectInputStream.readObject();
-                dados.add(t);
-            }
+            dados = (List<T>) objectInputStream.readObject();
+            fileInputStream.close();
+            objectInputStream.close();
         } catch (FileNotFoundException e) {
             saveInFile();
         } catch (IOException | ClassNotFoundException e) {
@@ -37,14 +37,11 @@ public class Dao<T extends UtilitarioDoDao, K> implements IDao<T, K>, Serializab
 
     private boolean saveInFile() {
         try {
-            close();
-            fileOutputStream = new FileOutputStream(file, false);
+            fileOutputStream = new FileOutputStream(file);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
-
-            for (T t : dados) {
-                objectOutputStream.writeObject(t);
-            }
+            objectOutputStream.writeObject(dados);
             objectOutputStream.flush();
+            close();
             return true;
         } catch (Exception e) {
             e.printStackTrace();

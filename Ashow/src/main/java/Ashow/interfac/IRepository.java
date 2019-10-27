@@ -1,9 +1,8 @@
 package Ashow.interfac;
 
 import Ashow.dao.Dao;
-import Ashow.dao.UtilitarioDoDao;
 
-public interface IRepository<T extends UtilitarioDoDao, K> {
+public interface IRepository<T extends UtilitarioDoDao<K>, K> {
 
     public Dao<T, K> inicializarDao();
 

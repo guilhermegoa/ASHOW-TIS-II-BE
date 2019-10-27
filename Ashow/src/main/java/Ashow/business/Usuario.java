@@ -1,6 +1,6 @@
 package Ashow.business;
 
-import Ashow.dao.UtilitarioDoDao;
+import Ashow.interfac.UtilitarioDoDao;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -52,8 +52,8 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
 
     @Override
     public String toString() {
-        return "\nUsu�rio: " + this.ID + "\nNome: " + this.nome + "\nE-mail: " + this.email +
-                "\nM�dia: " + this.mediaAvaliacao;
+        return "{\nUsu�rio: " + this.ID + ",\nNome: \"" + this.nome + "\",\nE-mail: \"" + this.email +
+                "\",\nM�dia: " + this.mediaAvaliacao;
     }
 
     public StringBuilder verEventos() {

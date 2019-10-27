@@ -1,4 +1,4 @@
-package Ashow.dao;
+package Ashow.interfac;
 
 public interface UtilitarioDoDao<K> {
     public K getID();
