@@ -20,7 +20,7 @@ public class TesteUsuario {
     public static void main(String args[]) throws IOException {
 
     	//teste de inserção do usuário contratante
-        IDAO<Usuario, String> contratanteDAO = new UsuarioDAO("contratante.bin");
+        IDAO<Usuario, String> contratanteDAO = (IDAO<Usuario, String>) new UsuarioDAO("contratante.bin");
         
         Endereco e = new Endereco("3201998", "Tereza", "13", "Tropical", "Contagem", "MG", "Próximo a uma padaria");
         
@@ -54,7 +54,7 @@ public class TesteUsuario {
         System.out.println("---------------------------------------------");
 
         //teste de inserção do usuário artista
-        IDAO<Usuario, String> artistaDAO = new UsuarioDAO("artista.bin");
+        IDAO<Usuario, String> artistaDAO = (IDAO<Usuario, String>) new UsuarioDAO("artista.bin");
         artistaDAO.add(new Artista("João", "Nevasca", "ABCD", "joao@neves.br", "Sertanejo", "Solo"));
 
         List<Usuario> artistas = artistaDAO.getAll();
