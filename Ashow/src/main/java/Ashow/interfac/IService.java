@@ -8,7 +8,7 @@ import java.util.List;
 public interface IService<T> {
     public List<Artista> getAll();
     public T get(String k);
-    public Response add(T t);
+    public boolean add(T t);
     public Response update(T t);
     public Response remove(String k);
 }

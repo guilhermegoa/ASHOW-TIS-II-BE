@@ -33,8 +33,9 @@ public class ArtistaService implements IService <Artista>{
     @Path("add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Override
-    public Response add(Artista artista) {
-        return null;
+    public boolean add(Artista artista) {
+        System.out.println(artista);
+        return Sistema.artistaDao.ARTISTA_DAO.add(artista);
     }
 
     @PUT
