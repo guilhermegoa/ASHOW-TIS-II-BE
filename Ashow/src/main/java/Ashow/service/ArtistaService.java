@@ -47,16 +47,16 @@ public class ArtistaService implements IService{
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     @Override
-    public List<Artista> getAll() {
-        return sistema.artistaDao.ARTISTA_DAO.getAll();
+    public String getAll() {
+        return sistema.artistaDao.ARTISTA_DAO.getAll().toString();
     }
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Override
-    public Artista get(@PathParam("id") String integer) {
-        return sistema.artistaDao.ARTISTA_DAO.get(Integer.parseInt(integer));
+    public String get(@PathParam("id") String integer) {
+        return sistema.artistaDao.ARTISTA_DAO.get(Integer.parseInt(integer)).toString();
     }
 
     @POST
