@@ -10,13 +10,13 @@ public class Sistema {
 
     public static RepositoryArtista initArtista() {
         RepositoryArtista a = new RepositoryArtista();
-//        a.ARTISTA_DAO.add(new Artista("Matheus","Thetheu", "12345", "theu@email.com", "DJ", "Solo"));
-//        a.ARTISTA_DAO.add(new Artista("Guilherme","GOA", "12345", "goa@email.com", "Pagodeiro", "Solo"));
+        a.ARTISTA_DAO.add(new Artista("Matheus","Thetheu", "12345", "theu@email.com", "DJ", "Solo"));
+        a.ARTISTA_DAO.add(new Artista("Guilherme","GOA", "12345", "goa@email.com", "Pagodeiro", "Solo"));
         return a;
     }
     public static RepositoryContratante initContratante() {
         RepositoryContratante c = new RepositoryContratante();
-//        c.CONTRATANTE_DAO.add(new Contratante("Shulambs", "12345", "contro@gmail.com"));
+        c.CONTRATANTE_DAO.add(new Contratante("Shulambs", "12345", "contro@gmail.com"));
         return c;
     }
 

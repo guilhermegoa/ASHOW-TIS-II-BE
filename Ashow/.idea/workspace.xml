@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artista.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/artista.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratante.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratante.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Sistema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/IService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/interfac/IService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

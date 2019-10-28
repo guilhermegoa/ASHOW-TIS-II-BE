@@ -47,8 +47,8 @@ public class ArtistaService implements IService{
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     @Override
-    public String getAll() {
-        return sistema.artistaDao.ARTISTA_DAO.getAll().toString();
+    public List<Artista> getAll() {
+        return sistema.artistaDao.ARTISTA_DAO.getAll();
     }
 
     @GET
