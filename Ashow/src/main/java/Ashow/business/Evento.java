@@ -15,6 +15,8 @@ public class Evento implements Serializable {
     private LocalDateTime data;
     private Endereco endereco;
 
+    public Evento(){}
+
     public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco) {
         setNome(nome);
         setValor(valor);

@@ -13,6 +13,8 @@ public class Artista extends Usuario implements Serializable {
     private int numeroEventos;
     private float valorPadrao;
 
+    public Artista(){}
+
     public Artista(String nome, String nomeArtistico, String senha, String email, String estilo, String tipoArtista) {
         super(nome, senha, email);
         setNomeArtistico(nomeArtistico);
@@ -120,5 +122,6 @@ public class Artista extends Usuario implements Serializable {
     public void setValorPadrao(float valorPadrao) {
         this.valorPadrao = valorPadrao;
     }
+
 
 }

@@ -2,11 +2,6 @@ package Ashow.service;
 
 import Ashow.business.Contratante;
 import Ashow.business.Sistema;
-import jdk.nashorn.internal.parser.JSONParser;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
-import javax.json.Json;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

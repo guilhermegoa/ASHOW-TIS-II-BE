@@ -19,6 +19,8 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
     Collection<Evento> eventos = new HashSet<Evento>();
     Collection<Avaliacao> avaliacoes = new HashSet<Avaliacao>();
 
+    public Usuario(){}
+
     public Usuario(String nome, String senha, String email) {
         setNome(nome);
         this.senha = senha;

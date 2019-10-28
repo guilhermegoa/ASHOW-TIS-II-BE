@@ -5,10 +5,10 @@ import Ashow.business.Artista;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-public interface IService {
+public interface IService<T> {
     public List<Artista> getAll();
-    public String get(String k);
-    public String add(String t);
-    public String update(String t);
+    public T get(String k);
+    public Response add(T t);
+    public Response update(T t);
     public Response remove(String k);
 }

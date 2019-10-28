@@ -6,6 +6,8 @@ public class Contratante extends Usuario implements Serializable {
     private static int contadorContratantes = 0;
     private int numeroEventos = 0;
 
+    public Contratante(){}
+
     public Contratante(String nome, String senha, String email) {
         super(nome, senha, email);
     }
