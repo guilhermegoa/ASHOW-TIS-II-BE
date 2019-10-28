@@ -49,11 +49,10 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
         return mediaAvaliacao;
     }
 
-
     @Override
     public String toString() {
-        return "{\nusuario: " + this.ID + ",\nnome: \"" + this.nome + "\",\nemail: \"" + this.email +
-                "\",\nmedia: " + this.mediaAvaliacao;
+        return "{\n\"usuario\": " + this.ID + ",\n\"nome\": \"" + this.nome + "\",\n\"email\": \"" + this.email +
+                "\",\n\"media\": " + this.mediaAvaliacao;
     }
 
     public StringBuilder verEventos() {

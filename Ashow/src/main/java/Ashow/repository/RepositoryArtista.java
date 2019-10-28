@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class RepositoryArtista implements IRepository, Serializable {
 
-    private static final String FILE = "artista.bin";
+    private static final String FILE = "src/main/java/Ashow/bin/artista.bin";
     public final Dao<Artista, Integer> ARTISTA_DAO = inicializarDao();
 
     @Override

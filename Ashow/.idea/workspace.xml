@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="" />
+    <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryContratante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artista.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/contratante.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artistas.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryArtista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryArtista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/CorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/contratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/contratanteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ashow-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ashow-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Ashow-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Ashow-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/Repository/RepositoryArtista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/Repository/RepositoryArtista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/app/TesteUsuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/IService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/interfac/IService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/CorsFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Ashow.MyResourceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/Ashow.MyResourceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-Ashow.MyResourceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-Ashow.MyResourceTest.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,13 +44,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -37,6 +69,8 @@
   <component name="ProjectId" id="1SlWtFwxgyjw6VhiVo8RVe0G5Dd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
@@ -57,11 +91,13 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Ashow.dao" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Ashow.business" />
+      <recent name="Ashow.repository" />
+      <recent name="Ashow.dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Ashow.dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -126,6 +162,7 @@
       <workItem from="1572194506338" duration="9863000" />
       <workItem from="1572207368578" duration="3196000" />
       <workItem from="1572211042830" duration="1779000" />
+      <workItem from="1572224201778" duration="11025000" />
     </task>
     <servers />
   </component>
@@ -149,16 +186,5 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Ashow/dao/Dao.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -3,8 +3,8 @@ package Ashow.business;
 import java.io.Serializable;
 
 public class Contratante extends Usuario implements Serializable {
-    private static int contadorContratantes;
-    private int numeroEventos;
+    private static int contadorContratantes = 0;
+    private int numeroEventos = 0;
 
     public Contratante(String nome, String senha, String email) {
         super(nome, senha, email);
@@ -22,7 +22,7 @@ public class Contratante extends Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString() + "\nN�mero de eventos: " + this.numeroEventos;
+        return super.toString() + ",\n\"N�mero de eventos\": " + this.numeroEventos + "\n}";
     }
 
 }
