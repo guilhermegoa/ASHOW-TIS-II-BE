@@ -1,5 +1,10 @@
 package Ashow.business;
 
+import jdk.nashorn.internal.parser.JSONParser;
+import netscape.javascript.JSObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import java.io.Serializable;
 
 public class Artista extends Usuario implements Serializable {
@@ -45,9 +50,20 @@ public class Artista extends Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString() + ",\nNome art�stico: \"" + this.nomeArtistico + "\",\nTipo de artista: \"" + this.tipoArtista +
-                "\",\nEstilo: \"" + this.estilo + "\",\nContato: \"" + this.contatoPublico + "\",\nDescricao: \"" + this.descricao +
-                "\",\nN�mero de eventos: " + this.numeroEventos + ",\nPopularidade: \"" + this.popularidade+"\"}";
+        return toJSON();
+    }
+
+    public String toJSON() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("usuario", getID());
+        jsonObject.put("nome", getNome());
+        jsonObject.put("email", getEmail());
+        jsonObject.put("media", getMediaAvaliacao());
+        jsonObject.put("nome_artistico", getNomeArtistico());
+        jsonObject.put("tipo_de_artista", getTipoArtista());
+        jsonObject.put("numero_de_eventos", getNumeroEventos());
+        jsonObject.put("popularidade", getPopularidade());
+        return jsonObject.toString();
     }
 
     public static int getContadorArtistas() {
