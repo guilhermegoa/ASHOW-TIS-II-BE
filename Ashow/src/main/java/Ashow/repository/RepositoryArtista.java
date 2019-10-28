@@ -1,4 +1,4 @@
-package Ashow.Repository;
+package Ashow.repository;
 
 import Ashow.business.Artista;
 import Ashow.dao.Dao;

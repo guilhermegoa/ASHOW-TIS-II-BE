@@ -57,11 +57,11 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Ashow.dao" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Ashow.dao" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Ashow.dao" />
     </key>
   </component>
   <component name="RunDashboard">

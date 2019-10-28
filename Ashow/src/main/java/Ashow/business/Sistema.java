@@ -1,6 +1,6 @@
 package Ashow.business;
 
-import Ashow.Repository.RepositoryArtista;
+import Ashow.repository.RepositoryArtista;
 
 public class Sistema {
 
