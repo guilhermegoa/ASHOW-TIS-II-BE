@@ -1,14 +1,13 @@
 package Ashow.service;
 
 import Ashow.business.Artista;
-import Ashow.business.Contratante;
 import Ashow.business.Sistema;
-import Ashow.business.Usuario;
 import Ashow.interfac.IService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("artista")
 public class ArtistaService implements IService{
@@ -48,16 +47,16 @@ public class ArtistaService implements IService{
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
     @Override
-    public String getAll() {
-        return sistema.artistaDao.ARTISTA_DAO.getAll().toString();
+    public List<Artista> getAll() {
+        return sistema.artistaDao.ARTISTA_DAO.getAll();
     }
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Override
-    public String get(@PathParam("id") String integer) {
-        return sistema.artistaDao.ARTISTA_DAO.get(Integer.parseInt(integer)).toString();
+    public Artista get(@PathParam("id") String integer) {
+        return sistema.artistaDao.ARTISTA_DAO.get(Integer.parseInt(integer));
     }
 
     @POST
