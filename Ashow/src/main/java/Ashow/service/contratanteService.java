@@ -2,59 +2,51 @@ package Ashow.service;
 
 import Ashow.business.Contratante;
 import Ashow.business.Sistema;
+import Ashow.interfac.IService;
+import org.jvnet.hk2.annotations.Service;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 
 @Path("contratante")
-public class contratanteService {
+public class contratanteService {// implements IService<Contratante> {
     private Sistema sistema;
 
     @GET
     @Path("all")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllUser() {
-        return Sistema.contratanteDao.CONTRATANTE_DAO.getAll().toString();
+    public List<Contratante> getAll() {
+        return Sistema.contratanteDao.CONTRATANTE_DAO.getAll();
     }
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public  String getUser(@PathParam("id") String id) {
-       return Sistema.contratanteDao.CONTRATANTE_DAO.get(Integer.parseInt(id)).toString();
+    public Contratante get(@PathParam("id") String id) {
+       return Sistema.contratanteDao.CONTRATANTE_DAO.get(Integer.parseInt(id));
     }
 
     @POST
     @Path("add")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response add(String nome) {
-        System.out.println(nome);
-        Sistema.contratanteDao.CONTRATANTE_DAO.add(new Contratante(nome, "", ""));
-        return Response.status(Response.Status.CREATED).build();
+    public boolean add(Contratante contratante) {
+        System.out.println(contratante);
+        return Sistema.contratanteDao.CONTRATANTE_DAO.add(contratante);
     }
-
-//    @POST
-//    @Path("add")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public Response add(Object jsonObject) {
-//        System.out.println(jsonObject);
-////        Contratante contratante = new Contratante("","","");
-////        Sistema.contratanteDao.CONTRATANTE_DAO.add(contratante);
-//        return Response.status(Response.Status.CREATED).build();
-//    }
-
     @PUT
     @Path("update")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateUser(Contratante contratante) {
+    public Response update(Contratante contratante) {
         Sistema.contratanteDao.CONTRATANTE_DAO.update(contratante);
         return Response.ok().build();
     }
 
     @DELETE
     @Path("delete/{id}")
-    public Response deleteProduct(@PathParam("id") String id) {
+    public Response remove(@PathParam("id") String id) {
         Contratante contratante = Sistema.contratanteDao.CONTRATANTE_DAO.get(Integer.parseInt(id));
         Sistema.contratanteDao.CONTRATANTE_DAO.remove(contratante);
         return Response.status(202).entity("Produto " + id + " removido com sucesso.").build();

@@ -6,7 +6,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 public interface IService<T> {
-    public List<Artista> getAll();
+    public List<T> getAll();
     public T get(String k);
     public boolean add(T t);
     public Response update(T t);
