@@ -42,17 +42,16 @@ public class ArtistaService implements IService <Artista>{
     @Path("update")
     @Consumes(MediaType.APPLICATION_JSON)
     @Override
-    public Response update(Artista artista) {
-        return null;
+    public boolean update(Artista artista) {
+        return Sistema.artistaDao.ARTISTA_DAO.update(artista);
     }
 
     @DELETE
     @Path("delete/{id}")
     @Override
-    public Response remove(@PathParam("id") String id) {
+    public boolean remove(@PathParam("id") String id) {
         Artista artista = Sistema.artistaDao.ARTISTA_DAO.get(Integer.parseInt(id));
-        Sistema.artistaDao.ARTISTA_DAO.remove(artista);
-        return Response.status(202).entity("Artista " + id + " removido com sucesso.").build();
+        return Sistema.artistaDao.ARTISTA_DAO.remove(artista);
     }
 
 }

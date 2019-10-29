@@ -1,8 +1,10 @@
 package Ashow.business;
 
 import Ashow.interfac.UtilitarioDoDao;
+import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -16,10 +18,24 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
     private int somaNotas;
     private float mediaAvaliacao;
     private Endereco endereco;
-    Collection<Evento> eventos = new HashSet<Evento>();
-    Collection<Avaliacao> avaliacoes = new HashSet<Avaliacao>();
+    private Collection<Evento> eventos = new HashSet<Evento>();
+    private Collection<Avaliacao> avaliacoes = new HashSet<Avaliacao>();
 
-    public Usuario(){}
+    public Usuario() {
+
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public Usuario(String nome, String senha, String email) {
         setNome(nome);
@@ -27,6 +43,7 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
         setEmail(email);
         somaUmContadorUsuario();
         this.ID = contador;
+        contador++;
     }
 
     private void somaUmContadorUsuario() {
@@ -51,10 +68,18 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
         return mediaAvaliacao;
     }
 
+    public Collection<Evento> getEventos() {
+        return eventos;
+    }
+
+    public Collection<Avaliacao> getAvaliacoes() {
+        return avaliacoes;
+    }
+
     @Override
     public String toString() {
         return "{\n\"usuario\": " + this.ID + ",\n\"nome\": \"" + this.nome + "\",\n\"email\": \"" + this.email +
-                "\",\n\"media\": " + this.mediaAvaliacao;
+                "\",\n\"media\": " + this.mediaAvaliacao + "\",\nsenha: " + this.getSenha();
     }
 
     public StringBuilder verEventos() {

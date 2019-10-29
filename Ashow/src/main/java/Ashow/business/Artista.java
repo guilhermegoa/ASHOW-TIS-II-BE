@@ -13,7 +13,9 @@ public class Artista extends Usuario implements Serializable {
     private int numeroEventos;
     private float valorPadrao;
 
-    public Artista(){}
+    public Artista(){
+        super();
+    }
 
     public Artista(String nome, String nomeArtistico, String senha, String email, String estilo, String tipoArtista) {
         super(nome, senha, email);
@@ -33,7 +35,7 @@ public class Artista extends Usuario implements Serializable {
 
     public boolean addEventos(Evento evento) {
         if (evento.isOpen()) {
-            eventos.add(evento);
+            getEventos().add(evento);
             evento.aumentarArtistas();
             numeroEventos++;
             return true;

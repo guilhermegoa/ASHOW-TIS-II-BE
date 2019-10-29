@@ -4,15 +4,25 @@
     <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artista.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratante.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/contratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/contratanteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/UtilitarioDoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/interfac/UtilitarioDoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/IService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/interfac/IService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/repository/RepositoryContratante.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/UtilitarioDoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/interfac/UtilitarioDoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,13 +81,16 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Ashow.dao" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Ashow.repository" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Ashow.business" />
       <recent name="Ashow.repository" />
       <recent name="Ashow.dao" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Sistema">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ashow.service.Main" />
       <module name="Ashow" />
@@ -121,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Sistema" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Sistema" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +159,7 @@
       <workItem from="1572270415810" duration="965000" />
       <workItem from="1572272872369" duration="1470000" />
       <workItem from="1572308631426" duration="4754000" />
+      <workItem from="1572356615143" duration="5847000" />
     </task>
     <servers />
   </component>

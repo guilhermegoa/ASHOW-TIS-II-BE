@@ -9,6 +9,6 @@ public interface IService<T> {
     public List<T> getAll();
     public T get(String k);
     public boolean add(T t);
-    public Response update(T t);
-    public Response remove(String k);
+    public boolean update(T t);
+    public boolean remove(String k);
 }

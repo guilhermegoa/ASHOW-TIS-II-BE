@@ -14,7 +14,7 @@ public class Contratante extends Usuario implements Serializable {
 
 
     public void criarEvento(Evento evento) {
-        eventos.add(evento);
+        this.getEventos().add(evento);
         numeroEventos++;
     }
 
