@@ -1,5 +1,7 @@
-package Ashow.business;
+package Ashow.service;
 
+import Ashow.business.Artista;
+import Ashow.business.Contratante;
 import Ashow.repository.RepositoryArtista;
 import Ashow.repository.RepositoryContratante;
 

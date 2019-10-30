@@ -1,6 +1,7 @@
 package Ashow.repository;
 
 import Ashow.business.Contratante;
+import Ashow.business.Usuario;
 import Ashow.dao.Dao;
 import Ashow.interfac.IRepository;
 

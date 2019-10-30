@@ -1,32 +1,44 @@
 package Ashow.dao;
 
+import Ashow.business.Artista;
+import Ashow.business.Contratante;
+import Ashow.business.Usuario;
 import Ashow.interfac.IDao;
-import Ashow.interfac.UtilitarioDoDao;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Serializable {
-    private List<T> dados;
+public class DaoUsuario<K> implements IDao<Usuario, Integer>, Serializable {
+    private List<Usuario> dados;
     private File file;
+    private File fileArtista;
+    private File fileContratante;
     private FileOutputStream fileOutputStream;
     private ObjectOutputStream objectOutputStream;
 
-    public Dao(String filename) throws IOException {
+    public DaoUsuario(String filename, String fileArtistaName, String fileContratanteName) throws IOException {
         file = new File(filename);
-        dados = readFromFile();
+        fileArtista = new File(fileArtistaName);
+        fileContratante = new File(fileContratanteName);
+        dados = readFromFiles();
     }
 
-    private List<T> readFromFile() {
-        dados = new ArrayList<T>();
+    private List<Usuario> readFromFiles() {
+        dados = new ArrayList<Usuario>();
         try {
-            FileInputStream fileInputStream = new FileInputStream(file);
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            dados = (List<T>) objectInputStream.readObject();
-            fileInputStream.close();
-            objectInputStream.close();
+            FileInputStream fileInputStreamArtista = new FileInputStream(fileArtista);
+            FileInputStream fileInputStreamContratante = new FileInputStream(fileContratante);
+            ObjectInputStream objectInputStreamArtista = new ObjectInputStream(fileInputStreamArtista);
+            ObjectInputStream objectInputStreamContratante = new ObjectInputStream(fileInputStreamContratante);
+
+            List<Artista> dadosArtistas = (List<Artista>) objectInputStreamArtista.readObject();
+            List<Contratante> dadosContratante = (List<Contratante>) objectInputStreamContratante.readObject();
+            dados.addAll(dadosArtistas);
+            dados.addAll(dadosContratante);
+            fileInputStreamArtista.close();
+            objectInputStreamContratante.close();
         } catch (FileNotFoundException e) {
             saveInFile();
         } catch (IOException | ClassNotFoundException e) {
@@ -39,7 +51,7 @@ public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Seriali
         try {
             fileOutputStream = new FileOutputStream(file);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(dados);
+            objectOutputStream.writeObject(readFromFiles());
             objectOutputStream.flush();
             close();
             return true;
@@ -59,16 +71,16 @@ public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Seriali
     }
 
     @Override
-    public T get(K k) {
-        for (T t : dados)
+    public Usuario get(Integer k) {
+        for (Usuario t : dados)
             if (t.isID(k)) {
                 return t;
             }
         return null;
     }
 
-    public T get(String k) {
-        for (T t : dados)
+    public Usuario get(String k) {
+        for (Usuario t : dados)
             if (t.getEmail().equals(k)) {
                 return t;
             }
@@ -76,8 +88,8 @@ public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Seriali
     }
 
     @Override
-    public boolean update(T t) {
-        ListIterator<T> iterator = dados.listIterator();
+    public boolean update(Usuario t) {
+        ListIterator<Usuario> iterator = dados.listIterator();
         while (iterator.hasNext()) {
             if (iterator.next().isID(t.getID())) {
                 dados.set(iterator.nextIndex() - 1, t);
@@ -88,15 +100,15 @@ public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Seriali
     }
 
     @Override
-    public boolean add(T t) {
+    public boolean add(Usuario t) {
         dados.add(t);
         return saveInFile();
     }
 
 
     @Override
-    public boolean remove(T t) {
-        ListIterator<T> iterator = dados.listIterator();
+    public boolean remove(Usuario t) {
+        ListIterator<Usuario> iterator = dados.listIterator();
         while (iterator.hasNext()) {
             if (iterator.next().isID(t.getID())) {
                 iterator.remove();
@@ -107,7 +119,7 @@ public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Seriali
     }
 
     @Override
-    public List<T> getAll() {
-        return readFromFile();
+    public List<Usuario> getAll() {
+        return readFromFiles();
     }
 }

@@ -1,12 +1,11 @@
 package Ashow.business;
 
 import Ashow.interfac.UtilitarioDoDao;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 import java.io.*;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.OptionalInt;
 
 public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> {
     private static int contador = 0;
@@ -107,8 +106,10 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
         return contador;
     }
 
-    public static void setContador(int contador) {
-        Usuario.contador = contador;
+    public static void setContador(OptionalInt contador) {
+        if (Usuario.contador < contador.getAsInt()) {
+            Usuario.contador = contador.getAsInt();
+        }
     }
 
     public String getEmail() {
@@ -154,4 +155,7 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
         return ID;
     }
 
+    public static void setContador(int contador) {
+        Usuario.contador = contador;
+    }
 }

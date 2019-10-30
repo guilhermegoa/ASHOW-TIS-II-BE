@@ -5,5 +5,6 @@ public interface UtilitarioDoDao<K> {
     default public boolean isID(K k) {
         return k.equals(getID());
     }
+    public String getEmail();
 
 }

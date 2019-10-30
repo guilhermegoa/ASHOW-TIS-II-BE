@@ -1,9 +1,6 @@
 package Ashow.service;
 
 import Ashow.business.Contratante;
-import Ashow.business.Sistema;
-import Ashow.interfac.IService;
-import org.jvnet.hk2.annotations.Service;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

@@ -1,8 +1,5 @@
 package Ashow.service;
 
-import Ashow.business.Artista;
-import Ashow.business.Contratante;
-import Ashow.business.Sistema;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
