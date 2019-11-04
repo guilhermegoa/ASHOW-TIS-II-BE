@@ -1,7 +1,7 @@
 package Ashow.service;
 
 import Ashow.business.Artista;
-import Ashow.business.Sistema;
+import Ashow.service.Sistema;
 import Ashow.interfac.IService;
 
 import javax.ws.rs.*;
@@ -10,7 +10,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/artista")
-public class ArtistaService implements IService <Artista>{
+public class ArtistaService implements IService<Artista>{
     private Sistema sistema;
 
     @GET
@@ -34,8 +34,9 @@ public class ArtistaService implements IService <Artista>{
     @Consumes(MediaType.APPLICATION_JSON)
     @Override
     public boolean add(Artista artista) {
-        System.out.println(artista);
-        return Sistema.artistaDao.ARTISTA_DAO.add(artista);
+        Artista artistanew = new Artista(artista.getNome(),artista.getNomeArtistico(),artista.getSenha(),artista.getEmail(),artista.getEstilo(),artista.getTipoArtista());
+        System.out.println(artistanew);
+        return Sistema.artistaDao.ARTISTA_DAO.add(artistanew);
     }
 
     @PUT

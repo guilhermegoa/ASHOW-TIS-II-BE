@@ -125,5 +125,11 @@ public class Artista extends Usuario implements Serializable {
         this.valorPadrao = valorPadrao;
     }
 
+    public Integer getID() {
+        return super.getID();
+    }
 
+    public void setID(int ID) {
+        super.setID(ID);
+    }
 }

@@ -1,5 +1,6 @@
 package Ashow.dao;
 
+import Ashow.business.Usuario;
 import Ashow.interfac.IDao;
 import Ashow.interfac.UtilitarioDoDao;
 
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Serializable {
+public abstract class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Serializable {
     private List<T> dados;
     private File file;
     private FileOutputStream fileOutputStream;
@@ -17,7 +18,7 @@ public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Seriali
     public Dao(String filename) throws IOException {
         file = new File(filename);
         dados = readFromFile();
-    }
+     }
 
     private List<T> readFromFile() {
         dados = new ArrayList<T>();
@@ -58,14 +59,7 @@ public class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Seriali
         }
     }
 
-    @Override
-    public T get(K k) {
-        for (T t : dados)
-            if (t.isID(k)) {
-                return t;
-            }
-        return null;
-    }
+    public abstract T get(K k);
 
     public T get(String k) {
         for (T t : dados)

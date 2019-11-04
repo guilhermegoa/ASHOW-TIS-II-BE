@@ -9,7 +9,7 @@ import java.util.List;
 
 
 @Path("contratante")
-public class contratanteService {// implements IService<Contratante> {
+public class ContratanteService {// implements IService<Contratante> {
     private Sistema sistema;
 
     @GET

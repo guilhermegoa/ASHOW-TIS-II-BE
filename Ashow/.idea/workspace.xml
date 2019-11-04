@@ -5,23 +5,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artista.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratante.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/UtilitarioDoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/interfac/UtilitarioDoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryArtista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryArtista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryContratante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryContratante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/artistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/repository/RepositoryUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/contratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/contratanteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/Repository/RepositoryContratante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/Repository/RepositoryContratante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Sistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/artistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/contratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/dao/Dao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/dao/Dao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/UtilitarioDoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/interfac/UtilitarioDoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/repository/RepositoryArtista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/repository/RepositoryArtista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/repository/RepositoryUsuario.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/Sistema.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +64,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Ashow" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,16 +81,16 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Ashow.dao" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Ashow.repository" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Ashow.business" />
       <recent name="Ashow.repository" />
       <recent name="Ashow.dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Ashow.repository" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -105,7 +105,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Sistema">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ashow.service.Main" />
       <module name="Ashow" />
@@ -134,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Sistema" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +161,7 @@
       <workItem from="1572308631426" duration="4754000" />
       <workItem from="1572356615143" duration="5847000" />
       <workItem from="1572379152055" duration="7401000" />
+      <workItem from="1572876423704" duration="4921000" />
     </task>
     <servers />
   </component>

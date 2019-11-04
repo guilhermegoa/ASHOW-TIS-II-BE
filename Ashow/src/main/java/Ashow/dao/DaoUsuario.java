@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class DaoUsuario<K> implements IDao<Usuario, Integer>, Serializable {
+public class DaoUsuario extends Dao<Usuario, Integer> implements Serializable {
     private List<Usuario> dados;
     private File file;
     private File fileArtista;
@@ -19,10 +19,10 @@ public class DaoUsuario<K> implements IDao<Usuario, Integer>, Serializable {
     private ObjectOutputStream objectOutputStream;
 
     public DaoUsuario(String filename, String fileArtistaName, String fileContratanteName) throws IOException {
-        file = new File(filename);
-        fileArtista = new File(fileArtistaName);
-        fileContratante = new File(fileContratanteName);
-        dados = readFromFiles();
+        super(filename);
+        this.fileArtista = new File(fileArtistaName);
+        this.fileContratante = new File(fileContratanteName);
+        Usuario.setMaxID(dados.stream().mapToInt(Usuario::getID).max().getAsInt());
     }
 
     private List<Usuario> readFromFiles() {

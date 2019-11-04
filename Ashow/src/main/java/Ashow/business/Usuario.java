@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.OptionalInt;
 
 public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> {
-    private static int contador = 0;
+    private static int maxID = 0;
     private String senha;
     private String email;
     private String nome;
@@ -38,15 +38,10 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
 
     public Usuario(String nome, String senha, String email) {
         setNome(nome);
-        this.senha = senha;
+        setSenha(senha);
         setEmail(email);
-        somaUmContadorUsuario();
-        this.ID = contador;
-        contador++;
-    }
-
-    private void somaUmContadorUsuario() {
-        setContador(getContador() + 1);
+        maxID++;
+        setID(maxID);
     }
 
     public boolean addAvaliacao(Avaliacao a) {
@@ -77,7 +72,7 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
 
     @Override
     public String toString() {
-        return "{\n\"usuario\": " + this.ID + ",\n\"nome\": \"" + this.nome + "\",\n\"email\": \"" + this.email +
+        return "{\n\"id\": " + this.ID + ",\n\"nome\": \"" + this.nome + "\",\n\"email\": \"" + this.email +
                 "\",\n\"media\": " + this.mediaAvaliacao + "\",\nsenha: " + this.getSenha();
     }
 
@@ -102,13 +97,13 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
         return this.email.equals(((Usuario) obj).getEmail());
     }
 
-    public static int getContador() {
-        return contador;
+    public static int getMaxID() {
+        return maxID;
     }
 
-    public static void setContador(OptionalInt contador) {
-        if (Usuario.contador < contador.getAsInt()) {
-            Usuario.contador = contador.getAsInt();
+    public static void setMaxID(int maxID) {
+        if (Usuario.maxID < maxID) {
+            Usuario.maxID = maxID;
         }
     }
 
@@ -145,17 +140,11 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
         this.endereco = endereco;
     }
 
-    @Override
     public boolean isID(Integer integer) {
         return getID() == integer;
     }
 
-    @Override
     public Integer getID() {
         return ID;
-    }
-
-    public static void setContador(int contador) {
-        Usuario.contador = contador;
     }
 }
