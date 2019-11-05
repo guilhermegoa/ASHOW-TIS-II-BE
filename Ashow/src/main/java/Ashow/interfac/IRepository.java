@@ -4,7 +4,7 @@ import Ashow.dao.Dao;
 
 public interface IRepository<T extends UtilitarioDoDao<K>, K> {
 
-    public Dao<T, K> inicializarDao();
+//    public Dao<T, K> inicializarDao();
 
 //    public List<T> getList();
 //

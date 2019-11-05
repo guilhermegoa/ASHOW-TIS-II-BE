@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.OptionalInt;
 
-public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> {
+public abstract class Usuario implements Serializable {
     private static int maxID = 0;
     private String senha;
     private String email;
@@ -73,13 +73,13 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
     @Override
     public String toString() {
         return "{\n\"id\": " + this.ID + ",\n\"nome\": \"" + this.nome + "\",\n\"email\": \"" + this.email +
-                "\",\n\"media\": " + this.mediaAvaliacao + "\",\nsenha: " + this.getSenha();
+                "\",\n\"media\": " + this.mediaAvaliacao + "\",\n\"senha\": " + this.getSenha();
     }
 
     public StringBuilder verEventos() {
         StringBuilder string = new StringBuilder();
         for (Evento evento : eventos) {
-            string.append(evento + "\n");
+            string.append(evento).append("\n");
         }
         return string;
     }
@@ -87,7 +87,7 @@ public abstract class Usuario implements Serializable, UtilitarioDoDao<Integer> 
     public StringBuilder verAvaliacoes() {
         StringBuilder string = new StringBuilder();
         for (Avaliacao a : avaliacoes) {
-            string.append(a + "\n");
+            string.append(a).append("\n");
         }
         return string;
     }

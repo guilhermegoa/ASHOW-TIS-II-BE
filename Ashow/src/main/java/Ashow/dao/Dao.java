@@ -1,24 +1,26 @@
 package Ashow.dao;
 
 import Ashow.business.Usuario;
-import Ashow.interfac.IDao;
-import Ashow.interfac.UtilitarioDoDao;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public abstract class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>, Serializable {
-    private List<T> dados;
-    private File file;
-    private FileOutputStream fileOutputStream;
-    private ObjectOutputStream objectOutputStream;
+public abstract class Dao<T extends Usuario, K> implements Serializable {
+    List<T> dados;
+    File file;
+    FileOutputStream fileOutputStream;
+    ObjectOutputStream objectOutputStream;
 
     public Dao(String filename) throws IOException {
         file = new File(filename);
         dados = readFromFile();
-     }
+    }
+
+    public File getFile() {
+        return file;
+    }
 
     private List<T> readFromFile() {
         dados = new ArrayList<T>();
@@ -69,7 +71,6 @@ public abstract class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>
         return null;
     }
 
-    @Override
     public boolean update(T t) {
         ListIterator<T> iterator = dados.listIterator();
         while (iterator.hasNext()) {
@@ -81,14 +82,11 @@ public abstract class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>
         return false;
     }
 
-    @Override
     public boolean add(T t) {
         dados.add(t);
         return saveInFile();
     }
 
-
-    @Override
     public boolean remove(T t) {
         ListIterator<T> iterator = dados.listIterator();
         while (iterator.hasNext()) {
@@ -100,7 +98,6 @@ public abstract class Dao<T extends UtilitarioDoDao<K>, K> implements IDao<T, K>
         return false;
     }
 
-    @Override
     public List<T> getAll() {
         return readFromFile();
     }
