@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/LoginUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artista.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratante.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuario.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/dao/Dao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/dao/Dao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,16 +70,17 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Ashow.dao" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Ashow.service" />
+      <recent name="Ashow.business" />
+      <recent name="Ashow.repository" />
+      <recent name="Ashow.dao" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Ashow.repository" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Ashow.business" />
-      <recent name="Ashow.repository" />
-      <recent name="Ashow.dao" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/Ashow/service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -156,6 +156,7 @@
       <workItem from="1572977292154" duration="15573000" />
       <workItem from="1573001426552" duration="143000" />
       <workItem from="1573039797001" duration="2623000" />
+      <workItem from="1573048634039" duration="1494000" />
     </task>
     <servers />
   </component>

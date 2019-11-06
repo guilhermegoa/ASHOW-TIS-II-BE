@@ -75,4 +75,14 @@ public class ContratanteService {
             } else return false;
         } else return false;
     }
+
+    @POST
+    @Path("log")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public boolean log(LoginUsuario lodDados) {
+        Contratante c = Sistema.getRepository().dao_contratantes.get(lodDados.getEmail());
+        if (c != null) {
+            return c.isSenha(lodDados.getSenha());
+        }else return false;
+    }
 }

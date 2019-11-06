@@ -75,4 +75,13 @@ public class ArtistaService {
         } else return false;
     }
 
+    @POST
+    @Path("log")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public boolean log(LoginUsuario lodDados) {
+        Artista a = Sistema.getRepository().dao_artistas.get(lodDados.getEmail());
+        if (a != null) {
+            return a.isSenha(lodDados.getSenha());
+        }else return false;
+    }
 }

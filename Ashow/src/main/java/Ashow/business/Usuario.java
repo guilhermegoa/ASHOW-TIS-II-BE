@@ -147,4 +147,8 @@ public abstract class Usuario implements Serializable {
     public Integer getID() {
         return ID;
     }
+
+    public boolean isSenha(String senhaTeste) {
+        return senhaTeste.equals(getSenha());
+    }
 }
