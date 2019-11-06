@@ -78,9 +78,9 @@ public class DaoEventos implements Serializable {
     }
 
     public boolean update(int id, Evento evento) {
-        Stream<Evento> x = dados.stream().filter(o -> o.getId() == (id));
-        if (x.anyMatch(o -> o.getNome().equals(evento.getNome()))) {
-            Evento contratante = (Evento) dados.stream().filter(o -> o.getId() == (id)).collect(Collectors.toList()).get(0);
+        List<Evento> x = dados.stream().filter(o -> o.getId() == (id)).collect(Collectors.toList());
+        if (!x.isEmpty()) {
+            Evento contratante = x.get(0);
             System.out.println("ANTES:"+contratante);
             if (evento.getCapacidadeEsperada() != contratante.getCapacidadeEsperada())
                 contratante.setCapacidadeEsperada(evento.getCapacidadeEsperada());
