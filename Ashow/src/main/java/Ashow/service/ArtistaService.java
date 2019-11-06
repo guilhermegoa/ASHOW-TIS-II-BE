@@ -7,50 +7,72 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-@Path("/artista")
-public class ArtistaService{
+@Path("artista")
+public class ArtistaService {
 
     @GET
-    @Path("/all")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("all")
+    @Produces({MediaType.APPLICATION_JSON})
     public List<Artista> getAll() {
-        List<Artista> a = new ArrayList<>();
-        Sistema.getRepository().dao_usuarios.getAll().stream().filter(o->o instanceof Artista).forEach(o -> a.add(((Artista) o)));
+        List<Artista> a = Sistema.getRepository().dao_artistas.getAll();
         return a;
     }
 
     @GET
-    @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Artista get(@PathParam("id") String integer) {
-        Usuario a = Sistema.getRepository().dao_usuarios.get(Integer.parseInt(integer));
-        if(a instanceof Artista)
+    @Path("{email}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Artista get(@PathParam("email") String email) {
+        Usuario a = Sistema.getRepository().dao_usuarios.get(email);
+        if (a instanceof Artista)
             return ((Artista) a);
         else return null;
     }
 
     @POST
     @Path("add")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes({MediaType.APPLICATION_JSON})
     public boolean add(Artista artista) {
-        Artista artistanew = new Artista(artista.getNome(),artista.getNomeArtistico(),artista.getSenha(),artista.getEmail(),artista.getEstilo(),artista.getTipoArtista());
+        System.out.println("ADD Artista:");
+        Artista artistanew = new Artista(artista.getNome(), artista.getNomeArtistico(), artista.getSenha(), artista.getEmail(), artista.getEstilo(), artista.getTipoArtista());
         System.out.println(artistanew);
-        return Sistema.getRepository().dao_usuarios.add(artistanew);
+        boolean b = Sistema.getRepository().dao_usuarios.add(artistanew);
+        boolean a = Sistema.getRepository().dao_artistas.add(artistanew);
+        System.out.println(a);
+        System.out.println(b);
+        return b && a;
     }
 
-    @PUT
+    @POST
     @Path("update")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes({MediaType.APPLICATION_JSON})
     public boolean update(Artista artista) {
-        return Sistema.getRepository().dao_usuarios.update(artista);
+        System.out.println(artista);
+        String email = artista.getEmail();
+        boolean a = Sistema.getRepository().dao_usuarios.update(email,artista);
+        boolean b = Sistema.getRepository().dao_artistas.update(email,artista);
+        System.out.println(a);
+        System.out.println(b);
+        return a && b;
     }
 
     @DELETE
-    @Path("delete/{id}")
-    public boolean remove(@PathParam("id") String id) {
-        Usuario artista = Sistema.getRepository().dao_usuarios.get(Integer.parseInt(id));
-        return Sistema.getRepository().dao_usuarios.remove(artista);
+    @Path("delete/{email}")
+    public boolean remove(@PathParam("email") String email) {
+        System.out.println("DELETE Artista:");
+        List<Usuario> artistas = Sistema.getRepository().dao_usuarios.getAll().stream().filter(a -> a.getEmail().equals(email)).filter(a -> a instanceof Artista).collect(Collectors.toList());
+        if (!artistas.isEmpty()) {
+            Artista artista = ((Artista) artistas.get(0));
+            System.out.println(artista);
+            if (artista != null) {
+                boolean a = Sistema.getRepository().dao_usuarios.remove(artista);
+                boolean b = Sistema.getRepository().dao_artistas.remove(artista);
+                System.out.println(a);
+                System.out.println(b);
+                return a && b;
+            } else return false;
+        } else return false;
     }
 
 }

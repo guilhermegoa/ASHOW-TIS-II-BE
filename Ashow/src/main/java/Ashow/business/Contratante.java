@@ -1,7 +1,10 @@
 package Ashow.business;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Contratante extends Usuario implements Serializable {
     private static int contadorContratantes = 0;
     private int numeroEventos = 0;

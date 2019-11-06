@@ -1,7 +1,10 @@
 package Ashow.business;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Artista extends Usuario implements Serializable {
     private static int contadorArtistas;
     private String estilo;

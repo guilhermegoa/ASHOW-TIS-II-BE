@@ -1,12 +1,12 @@
 package Ashow.business;
 
-import Ashow.interfac.UtilitarioDoDao;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.*;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.OptionalInt;
 
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public abstract class Usuario implements Serializable {
     private static int maxID = 0;
     private String senha;
