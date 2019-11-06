@@ -103,8 +103,8 @@ public abstract class Dao<T extends Usuario, K> implements Serializable {
 
     public boolean update(String email, Contratante contratanteAlterado) {
         Stream<T> x = dados.stream().filter(o -> o.getEmail().equals(email));
-        if (x.anyMatch(o -> o instanceof Artista)) {
-            Contratante contratante = (Contratante) dados.stream().filter(o -> o.getEmail().equals(email)).filter(o -> o instanceof Artista).collect(Collectors.toList()).get(0);
+        if (x.anyMatch(o -> o instanceof Contratante)) {
+            Contratante contratante = (Contratante) dados.stream().filter(o -> o.getEmail().equals(email)).filter(o -> o instanceof Contratante).collect(Collectors.toList()).get(0);
             System.out.println("ANTES:"+contratante);
             if (contratanteAlterado.getNome() != null)
                 contratante.setNome(contratanteAlterado.getNome());

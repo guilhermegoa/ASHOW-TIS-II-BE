@@ -1,5 +1,6 @@
 package Ashow.service;
 
+import Ashow.business.Artista;
 import Ashow.business.Contratante;
 import Ashow.business.Usuario;
 
@@ -38,7 +39,7 @@ public class ContratanteService {
         Contratante newcontratante = new Contratante(contratante.getNome(), contratante.getSenha(), contratante.getEmail());
         System.out.println(newcontratante);
         boolean b = Sistema.getRepository().dao_usuarios.add(newcontratante);
-        boolean a = Sistema.getRepository().dao_artistas.add(newcontratante);
+        boolean a = Sistema.getRepository().dao_contratantes.add(newcontratante);
         System.out.println(b);
         System.out.println(a);
         return b && a;
@@ -46,7 +47,7 @@ public class ContratanteService {
 
     @PUT
     @Path("update")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Consumes({MediaType.APPLICATION_JSON})
     public boolean update(Contratante contratante) {
         System.out.println(contratante);
         String email = contratante.getEmail();

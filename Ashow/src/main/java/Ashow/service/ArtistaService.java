@@ -44,7 +44,7 @@ public class ArtistaService {
         return b && a;
     }
 
-    @POST
+    @PUT
     @Path("update")
     @Consumes({MediaType.APPLICATION_JSON})
     public boolean update(Artista artista) {
