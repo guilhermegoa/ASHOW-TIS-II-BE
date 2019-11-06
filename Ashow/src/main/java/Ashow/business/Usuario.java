@@ -6,7 +6,6 @@ import java.io.*;
 import java.util.Collection;
 import java.util.HashSet;
 
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public abstract class Usuario implements Serializable {
     private static int maxID = 0;
     private String senha;

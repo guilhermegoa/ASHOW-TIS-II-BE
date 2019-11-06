@@ -2,24 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artista.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratante.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuario.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Endereco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artistas.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/eventos.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/repository/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/eventoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/Repository/Repository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Endereco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/Sistema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,12 +192,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/Ashow/business/Endereco.java</url>
-          <line>9</line>
-          <properties field="complemento" class="Ashow.business.Endereco" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java</url>
           <line>35</line>
@@ -209,5 +199,12 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="Sistema.getRepository().daoEventos.get(id)" language="JAVA" />
+        <watch expression="a" language="JAVA" />
+        <watch expression="x.anyMatch(o -&gt; o.getNome().equals(evento.getNome()))" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
