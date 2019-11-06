@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class Evento implements Serializable {
-    private static int contadorEvento = 0;
+    private static int maxIDEventos = 0;
     private int id;
     private int capacidadeEsperada;
     private int quantidadeArtistas;
@@ -19,15 +19,19 @@ public class Evento implements Serializable {
 
     public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco) {
         setNome(nome);
+        setCapacidadeEsperada(capacidadeEsperada);
         setValor(valor);
         setEstilo(estilo);
         setData(data);
-        setCapacidadeEsperada(capacidadeEsperada);
-        somaUMContadorEvento();
-        setId(getContadorEvento());
+        setEndereco(endereco);
+        somaUmMaxIDEvento();
+        setId(getMaxIDEventos());
         setOpen(true);
         setQuantidadeArtistas(0);
-        setEndereco(endereco);
+    }
+
+    public static void setMaxIDEventos(int maxIDEventos) {
+        Evento.maxIDEventos = maxIDEventos;
     }
 
     public String getNome() {
@@ -38,19 +42,16 @@ public class Evento implements Serializable {
         this.nome = nome;
     }
 
-
     public Endereco getEndereco() {
         return endereco;
     }
-
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
-
-    private void somaUMContadorEvento() {
-        setContadorEvento(getContadorEvento() + 1);
+    private void somaUmMaxIDEvento() {
+        setMaxIDEvento(getMaxIDEventos() + 1);
     }
 
     public boolean isOpen() {
@@ -109,12 +110,12 @@ public class Evento implements Serializable {
         this.data = data;
     }
 
-    public static int getContadorEvento() {
-        return contadorEvento;
+    public static int getMaxIDEventos() {
+        return maxIDEventos;
     }
 
-    public void setContadorEvento(int cont) {
-        Evento.contadorEvento = cont;
+    public void setMaxIDEvento(int cont) {
+        Evento.maxIDEventos = cont;
     }
 
     public void setOpen(boolean open) {
@@ -146,6 +147,9 @@ public class Evento implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        return this.nome.equals(((Evento) obj).getNome());
+        if (obj instanceof Evento)
+            return this.id == ((Evento) obj).id;
+        else
+            return false;
     }
 }
