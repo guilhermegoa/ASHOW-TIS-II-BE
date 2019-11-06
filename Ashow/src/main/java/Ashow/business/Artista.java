@@ -1,7 +1,10 @@
 package Ashow.business;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Artista extends Usuario implements Serializable {
     private static int contadorArtistas;
     private String estilo;
@@ -125,5 +128,11 @@ public class Artista extends Usuario implements Serializable {
         this.valorPadrao = valorPadrao;
     }
 
+    public Integer getID() {
+        return super.getID();
+    }
 
+    public void setID(int ID) {
+        super.setID(ID);
+    }
 }
