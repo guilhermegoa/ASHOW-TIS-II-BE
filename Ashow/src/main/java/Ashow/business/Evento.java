@@ -19,6 +19,20 @@ public class Evento implements Serializable {
 
     public Evento(){}
 
+    public Evento( String nome,int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco, int quantidadeArtistas) {
+        setQuantidadeArtistas(quantidadeArtistas);
+        setNome(nome);
+        setCapacidadeEsperada(capacidadeEsperada);
+        setValor(valor);
+        setEstilo(estilo);
+        setData(data);
+        setEndereco(endereco);
+        maxIDEventos++;
+        setId(getMaxIDEventos());
+        setOpen(true);
+        setQuantidadeArtistas(0);
+    }
+
     public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco) {
         setNome(nome);
         setCapacidadeEsperada(capacidadeEsperada);
@@ -26,7 +40,7 @@ public class Evento implements Serializable {
         setEstilo(estilo);
         setData(data);
         setEndereco(endereco);
-        somaUmMaxIDEvento();
+        maxIDEventos++;
         setId(getMaxIDEventos());
         setOpen(true);
         setQuantidadeArtistas(0);
@@ -50,10 +64,6 @@ public class Evento implements Serializable {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
-    }
-
-    private void somaUmMaxIDEvento() {
-        setMaxIDEvento(getMaxIDEventos() + 1);
     }
 
     public boolean isOpen() {

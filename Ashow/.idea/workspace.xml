@@ -2,24 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../alterações para entrega.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artistas.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/eventos.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Avaliacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artistas.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/artistas.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/eventos.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/eventos.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Pagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Avaliacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Avaliacao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/IService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/interfac/UtilitarioDoDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/EventoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/Repository/Repository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/IDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/IRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/IService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/interfac/UtilitarioDoDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ContratanteService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,9 +73,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -167,6 +172,7 @@
       <workItem from="1573039797001" duration="2623000" />
       <workItem from="1573048634039" duration="1494000" />
       <workItem from="1573079321242" duration="7538000" />
+      <workItem from="1573152737606" duration="6721000" />
     </task>
     <servers />
   </component>

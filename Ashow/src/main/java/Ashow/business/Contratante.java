@@ -1,6 +1,7 @@
 package Ashow.business;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Contratante extends Usuario implements Serializable {
     private static int contadorContratantes = 0;

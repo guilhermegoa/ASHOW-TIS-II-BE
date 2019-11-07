@@ -34,7 +34,7 @@ public class EventoService {
     public boolean add(Evento evento) {
         System.out.println("ADD Evento:");
         Evento eventonew = new Evento(evento.getNome(), evento.getCapacidadeEsperada(), evento.getValor(), evento.getEstilo(),
-                evento.getData(), evento.getEndereco());
+                evento.getData(), evento.getEndereco(),evento.getQuantidadeArtistas());
         System.out.println(eventonew);
         boolean a = Sistema.getRepository().daoEventos.add(eventonew);
         System.out.println(a);
