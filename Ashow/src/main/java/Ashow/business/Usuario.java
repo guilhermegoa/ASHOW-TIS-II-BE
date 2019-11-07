@@ -20,7 +20,6 @@ public abstract class Usuario implements Serializable {
     private Collection<Avaliacao> avaliacoes = new HashSet<Avaliacao>();
 
     public Usuario() {
-
     }
 
     public String getSenha() {
@@ -139,12 +138,12 @@ public abstract class Usuario implements Serializable {
         this.endereco = endereco;
     }
 
-    public boolean isID(Integer integer) {
+    public boolean isID(int integer) {
         return getID() == integer;
     }
 
-    public Integer getID() {
-        return ID;
+    public int getID() {
+        return this.ID;
     }
 
     public boolean isSenha(String senhaTeste) {

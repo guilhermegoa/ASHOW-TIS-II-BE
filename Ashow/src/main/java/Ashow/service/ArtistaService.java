@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 
 @Path("artista")
 public class ArtistaService {
-
     @GET
     @Path("all")
     @Produces({MediaType.APPLICATION_JSON})
@@ -18,7 +17,6 @@ public class ArtistaService {
         List<Artista> a = Sistema.getRepository().daoArtistas.getAll();
         return a;
     }
-
     @GET
     @Path("{email}")
     @Produces({MediaType.APPLICATION_JSON})
@@ -28,13 +26,12 @@ public class ArtistaService {
             return ((Artista) a);
         else return null;
     }
-
     @POST
     @Path("add")
     @Consumes({MediaType.APPLICATION_JSON})
     public boolean add(Artista artista) {
         System.out.println("ADD Artista:");
-        Artista artistanew = new Artista(artista.getNome(), artista.getNomeArtistico(), artista.getSenha(), artista.getEmail(), artista.getEstilo(), artista.getTipoArtista());
+                Artista artistanew = new Artista(artista.getNome(), artista.getNomeArtistico(), artista.getSenha(), artista.getEmail(), artista.getEstilo(), artista.getTipoArtista());
         System.out.println(artistanew);
         boolean b = Sistema.getRepository().daoUsuarios.add(artistanew);
         boolean a = Sistema.getRepository().daoArtistas.add(artistanew);
@@ -42,7 +39,6 @@ public class ArtistaService {
         System.out.println(b);
         return b && a;
     }
-
     @PUT
     @Path("update")
     @Consumes({MediaType.APPLICATION_JSON})
@@ -55,7 +51,6 @@ public class ArtistaService {
         System.out.println(b);
         return a && b;
     }
-
     @DELETE
     @Path("delete/{email}")
     public boolean remove(@PathParam("email") String email) {
@@ -73,7 +68,6 @@ public class ArtistaService {
             } else return false;
         } else return false;
     }
-
     @POST
     @Path("log")
     @Consumes({MediaType.APPLICATION_JSON})

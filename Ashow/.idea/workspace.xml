@@ -2,19 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artistas.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/eventos.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Avaliacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Pagamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Avaliacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Avaliacao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -162,6 +166,7 @@
       <workItem from="1573001426552" duration="143000" />
       <workItem from="1573039797001" duration="2623000" />
       <workItem from="1573048634039" duration="1494000" />
+      <workItem from="1573079321242" duration="7538000" />
     </task>
     <servers />
   </component>
@@ -190,15 +195,6 @@
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="Sistema.getRepository().daoEventos.get(id)" language="JAVA" />

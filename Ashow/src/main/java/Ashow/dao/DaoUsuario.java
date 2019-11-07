@@ -8,7 +8,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 
-public class DaoUsuario extends Dao<Usuario, Integer> implements Serializable {
+public class DaoUsuario extends Dao<Usuario, Integer> implements Serializable  {
     private FileOutputStream fileOutputStream;
     private ObjectOutputStream objectOutputStream;
 

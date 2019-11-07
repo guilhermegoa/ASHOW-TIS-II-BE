@@ -6,7 +6,7 @@ public class Pagamento {
     private boolean cancelado;
     private Double valorAPagar;
     private Contrato contrato;
-
+    
     private Pagamento() {
         formaPagamento = null;
         cancelado = false;
