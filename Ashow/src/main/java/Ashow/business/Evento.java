@@ -30,20 +30,6 @@ public class Evento implements Serializable {
         maxIDEventos++;
         setId(getMaxIDEventos());
         setOpen(true);
-        setQuantidadeArtistas(0);
-    }
-
-    public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco) {
-        setNome(nome);
-        setCapacidadeEsperada(capacidadeEsperada);
-        setValor(valor);
-        setEstilo(estilo);
-        setData(data);
-        setEndereco(endereco);
-        maxIDEventos++;
-        setId(getMaxIDEventos());
-        setOpen(true);
-        setQuantidadeArtistas(0);
     }
 
     public static void setMaxIDEventos(int maxIDEventos) {
@@ -154,7 +140,8 @@ public class Evento implements Serializable {
     public String toString() {
         return "Evento: " + this.id + "\nNome: " + this.nome + "\nEstilo: " + this.estilo
                 + "\nValor: " + this.valor + "\nCapacidade Esperada: " + this.capacidadeEsperada
-                + "\n\nEndereco:\n" + this.endereco;
+                + "\nEndereco:\n" + this.endereco
+                + "\nQuantidade artistas:" + this.quantidadeArtistas;
     }
 
     @Override

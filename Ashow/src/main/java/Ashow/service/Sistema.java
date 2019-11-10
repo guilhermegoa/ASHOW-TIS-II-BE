@@ -38,6 +38,6 @@ public class Sistema {
     private static void initEventos() {
         repository.daoEventos.add(new Evento("Festinha da Helen", 2, 300, "KPOP",
                 LocalDateTime.of(2019,11,15,20,30),
-                new Endereco("32020200","Rua X", "300", "Camargos", "Belo Horizonte", "MG", "casa")));
+                new Endereco("32020200","Rua X", "300", "Camargos", "Belo Horizonte", "MG", "casa"),2));
     }
 }

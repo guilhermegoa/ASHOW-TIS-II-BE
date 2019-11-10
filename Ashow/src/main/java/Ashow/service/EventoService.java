@@ -32,7 +32,7 @@ public class EventoService {
     @Path("add")
     @Consumes({MediaType.APPLICATION_JSON})
     public boolean add(Evento evento) {
-        System.out.println("ADD Evento:");
+        System.out.println("ADD Evento: "+evento.getQuantidadeArtistas());
         Evento eventonew = new Evento(evento.getNome(), evento.getCapacidadeEsperada(), evento.getValor(), evento.getEstilo(),
                 evento.getData(), evento.getEndereco(),evento.getQuantidadeArtistas());
         System.out.println(eventonew);
