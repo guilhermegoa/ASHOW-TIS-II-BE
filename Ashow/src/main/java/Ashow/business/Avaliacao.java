@@ -9,6 +9,8 @@ public class Avaliacao implements Serializable {
     private int notaFinal;
     private Evento evento;
 
+    public Avaliacao(){}
+
     public Avaliacao(String comentario, int notaFinal, Evento evento) {
         this.setComentario(comentario);
         this.setEvento(evento);

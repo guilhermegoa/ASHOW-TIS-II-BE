@@ -1,5 +1,7 @@
 package Ashow.business;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
 public class Artista extends Usuario implements Serializable {
@@ -14,7 +16,7 @@ public class Artista extends Usuario implements Serializable {
     private float valorPadrao;
 
     public Artista(){
-        super();
+
     }
 
     public Artista(String nome, String nomeArtistico, String senha, String email, String estilo, String tipoArtista) {
@@ -124,6 +126,5 @@ public class Artista extends Usuario implements Serializable {
     public void setValorPadrao(float valorPadrao) {
         this.valorPadrao = valorPadrao;
     }
-
 
 }

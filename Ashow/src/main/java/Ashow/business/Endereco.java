@@ -3,7 +3,6 @@ package Ashow.business;
 import java.io.Serializable;
 
 public class Endereco implements Serializable {
-
     private String numero;
     private String bairro;
     private String cidade;
@@ -31,6 +30,7 @@ public class Endereco implements Serializable {
         setBairro(bairro);
         setCidade(cidade);
         setUf(uf);
+        setComplemento("");
     }
 
     public String getNumero() {

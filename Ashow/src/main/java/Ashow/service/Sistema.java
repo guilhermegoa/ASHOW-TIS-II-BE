@@ -2,31 +2,42 @@ package Ashow.service;
 
 import Ashow.business.Artista;
 import Ashow.business.Contratante;
-import Ashow.repository.RepositoryArtista;
-import Ashow.repository.RepositoryContratante;
+import Ashow.business.Endereco;
+import Ashow.business.Evento;
+import Ashow.dao.DaoEventos;
+import Ashow.repository.Repository;
+
+import java.time.LocalDateTime;
 
 public class Sistema {
 
-    public static RepositoryArtista artistaDao = new RepositoryArtista();
-    public static RepositoryContratante contratanteDao = new RepositoryContratante();
+    private static Repository repository = new Repository();
 
-    public static RepositoryArtista initArtista() {
-        RepositoryArtista a = new RepositoryArtista();
-        a.ARTISTA_DAO.add(new Artista("Matheus", "Thetheu", "12345", "theu@email.com", "DJ", "Solo"));
-        a.ARTISTA_DAO.add(new Artista("Guilherme", "GOA", "12345", "goa@email.com", "Pagodeiro", "Solo"));
-        a.ARTISTA_DAO.add(new Artista("Arthur", "Tuba", "12345", "tuba@email.com", "Emocore", "Solo"));
+    public static Repository getRepository() {
+        return repository;
+    }
+
+    public static Repository init() {
+        Repository a = new Repository();
+        a.daoUsuarios.add(new Artista("Matheus", "Thetheu", "12345", "theu@email.com", "DJ", "Solo"));
+        a.daoUsuarios.add(new Artista("Guilherme", "GOA", "12345", "goa@email.com", "Pagodeiro", "Solo"));
+        Artista x = new Artista("Arthur", "Tuba", "12345", "tuba@email.com", "Emocore", "Solo");
+        a.daoUsuarios.add(x);
+        a.daoUsuarios.remove(x);
+        a.daoUsuarios.add(new Artista("Daniel", "Thetheu", "12345", "theu@email.com", "DJ", "Solo"));
+        a.daoUsuarios.add(new Contratante("Shulambs", "12345", "contratante@gmail.com"));
+        a.daoUsuarios.add(new Contratante("Tadeu", "12345", "tadeu@gmail.com"));
         return a;
     }
 
-    public static RepositoryContratante initContratante() {
-        RepositoryContratante c = new RepositoryContratante();
-        c.CONTRATANTE_DAO.add(new Contratante("Shulambs", "12345", "contratante@gmail.com"));
-        c.CONTRATANTE_DAO.add(new Contratante("Tadeu", "12345", "tadeu@gmail.com"));
-        return c;
+    public static void main(String[] args) {
+        initEventos();
+        repository.daoUsuarios.getAll().stream().forEach(a -> System.out.println(a));
     }
 
-    public static void main(String[] args) {
-        artistaDao = initArtista();
-        contratanteDao = initContratante();
+    private static void initEventos() {
+        repository.daoEventos.add(new Evento("Festinha da Helen", 2, 300, "KPOP",
+                LocalDateTime.of(2019,11,15,20,30),
+                new Endereco("32020200","Rua X", "300", "Camargos", "Belo Horizonte", "MG", "casa")));
     }
 }

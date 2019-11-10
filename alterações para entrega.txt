@@ -1,0 +1,5 @@
+Login:  Butao usuario -> artista
+	Campo usuario -> email (tirar CAPS)
+	
+Cadastro: enviar no primeiro click
+
