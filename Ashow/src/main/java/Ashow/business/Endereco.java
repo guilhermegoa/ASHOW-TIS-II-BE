@@ -91,7 +91,7 @@ public class Endereco implements Serializable {
 
     @Override
     public String toString() {
-        return "Rua: " + this.Rua + ", N�mero: " + this.numero + ", " + this.bairro +
-                ", " + this.cidade + " - " + this.uf + "\nCEP: " + this.cep + "\nDescricao: " + this.complemento;
+        return "{Rua: " + this.Rua + ", " + this.numero + ", " + this.bairro +
+                    ", " + this.cidade + " - " + this.uf + "\n CEP: " + this.cep + "\nComplemento: " + this.complemento+"}";
     }
 }

@@ -51,7 +51,7 @@ public class Artista extends Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return super.toString() + ",\n\"nome_artistico\": " + getNomeArtistico() + ",\n\"tipo_de_artista\": "+ getTipoArtista() +",\n \"numero_de_eventos\": "+
+        return super.toString() + ",\n\"nome_artistico\": " + getNomeArtistico() + ",\n\"tipo_de_artista\": "+ getTipoArtista() +",\n\"numero_de_eventos\": "+
                 getNumeroEventos() + ",\n\"popularidade\": "+ getPopularidade() + "\n}";
     }
 

@@ -20,4 +20,8 @@ public class LoginUsuario {
         this.senha = senha;
     }
 
+    @Override
+    public String toString() {
+        return "{\nemail = "+email+"\nsenha = "+senha+"\n}";
+    }
 }
