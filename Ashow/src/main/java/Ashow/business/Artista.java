@@ -1,130 +1,139 @@
 package Ashow.business;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import java.io.Serializable;
 
 public class Artista extends Usuario implements Serializable {
-    private static int contadorArtistas;
-    private String estilo;
-    private String nomeArtistico;
-    private String tipoArtista;
-    private String contatoPublico;
-    private String descricao;
-    private String popularidade;
-    private int numeroEventos;
-    private float valorPadrao;
+  private static int contadorArtistas;
+  private String estilo;
+  private String nomeArtistico;
+  private String tipoArtista;
+  private String contatoPublico;
+  private String descricao;
+  private String popularidade;
+  private int numeroEventos;
+  private float valorPadrao;
 
-    public Artista(){
+  public Artista() {}
 
+  public Artista(
+      String nome,
+      String nomeArtistico,
+      String senha,
+      String email,
+      String estilo,
+      String tipoArtista) {
+    super(nome, senha, email);
+    setNomeArtistico(nomeArtistico);
+    setEstilo(estilo);
+    setTipoArtista(tipoArtista);
+    somaUMContadorArtista();
+  }
+
+  private void somaUMContadorArtista() {
+    setContadorArtistas(getContadorArtistas() + 1);
+  }
+
+  public String calcularPopularidade(int eventos, float notas) {
+    return "0";
+  }
+
+  public boolean addEventos(Evento evento) {
+    if (evento.isOpen()) {
+      getEventos().add(evento);
+      evento.aumentarArtistas();
+      numeroEventos++;
+      return true;
     }
+    return false;
+  }
 
-    public Artista(String nome, String nomeArtistico, String senha, String email, String estilo, String tipoArtista) {
-        super(nome, senha, email);
-        setNomeArtistico(nomeArtistico);
-        setEstilo(estilo);
-        setTipoArtista(tipoArtista);
-        somaUMContadorArtista();
-    }
+  public boolean removerEvento(Evento evento) {
+    return false;
+  }
 
-    private void somaUMContadorArtista() {
-        setContadorArtistas(getContadorArtistas() + 1);
-    }
+  @Override
+  public String toString() {
+    return super.toString()
+        + ",\n\"nome_artistico\": "
+        + getNomeArtistico()
+        + ",\n\"tipo_de_artista\": "
+        + getTipoArtista()
+        + ",\n\"numero_de_eventos\": "
+        + getNumeroEventos()
+        + ",\n\"popularidade\": "
+        + getPopularidade()
+        + "\n}";
+  }
 
-    public String calcularPopularidade(int eventos, float notas) {
-        return "0";
-    }
+  public static int getContadorArtistas() {
+    return contadorArtistas;
+  }
 
-    public boolean addEventos(Evento evento) {
-        if (evento.isOpen()) {
-            getEventos().add(evento);
-            evento.aumentarArtistas();
-            numeroEventos++;
-            return true;
-        }
-        return false;
-    }
+  public static void setContadorArtistas(int contadorArtistas) {
+    Artista.contadorArtistas = contadorArtistas;
+  }
 
-    public boolean removerEvento(Evento evento) {
-        return false;
-    }
+  public String getEstilo() {
+    return estilo;
+  }
 
-    @Override
-    public String toString() {
-        return super.toString() + ",\n\"nome_artistico\": " + getNomeArtistico() + ",\n\"tipo_de_artista\": "+ getTipoArtista() +",\n\"numero_de_eventos\": "+
-                getNumeroEventos() + ",\n\"popularidade\": "+ getPopularidade() + "\n}";
-    }
+  public void setEstilo(String estilo) {
+    this.estilo = estilo;
+  }
 
-    public static int getContadorArtistas() {
-        return contadorArtistas;
-    }
+  public String getNomeArtistico() {
+    return nomeArtistico;
+  }
 
-    public static void setContadorArtistas(int contadorArtistas) {
-        Artista.contadorArtistas = contadorArtistas;
-    }
+  public void setNomeArtistico(String nomeArtistico) {
+    this.nomeArtistico = nomeArtistico;
+  }
 
-    public String getEstilo() {
-        return estilo;
-    }
+  public String getTipoArtista() {
+    return tipoArtista;
+  }
 
-    public void setEstilo(String estilo) {
-        this.estilo = estilo;
-    }
+  public void setTipoArtista(String tipoArtista) {
+    this.tipoArtista = tipoArtista;
+  }
 
-    public String getNomeArtistico() {
-        return nomeArtistico;
-    }
+  public String getContatoPublico() {
+    return contatoPublico;
+  }
 
-    public void setNomeArtistico(String nomeArtistico) {
-        this.nomeArtistico = nomeArtistico;
-    }
+  public void setContatoPublico(String contatoPublico) {
+    this.contatoPublico = contatoPublico;
+  }
 
-    public String getTipoArtista() {
-        return tipoArtista;
-    }
+  public String getDescricao() {
+    return descricao;
+  }
 
-    public void setTipoArtista(String tipoArtista) {
-        this.tipoArtista = tipoArtista;
-    }
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
+  }
 
-    public String getContatoPublico() {
-        return contatoPublico;
-    }
+  public String getPopularidade() {
+    return popularidade;
+  }
 
-    public void setContatoPublico(String contatoPublico) {
-        this.contatoPublico = contatoPublico;
-    }
+  public void setPopularidade(String popularidade) {
+    this.popularidade = popularidade;
+  }
 
-    public String getDescricao() {
-        return descricao;
-    }
+  public int getNumeroEventos() {
+    return numeroEventos;
+  }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+  public void setNumeroEventos(int numeroEventos) {
+    this.numeroEventos = numeroEventos;
+  }
 
-    public String getPopularidade() {
-        return popularidade;
-    }
+  public float getValorPadrao() {
+    return valorPadrao;
+  }
 
-    public void setPopularidade(String popularidade) {
-        this.popularidade = popularidade;
-    }
-
-    public int getNumeroEventos() {
-        return numeroEventos;
-    }
-
-    public void setNumeroEventos(int numeroEventos) {
-        this.numeroEventos = numeroEventos;
-    }
-
-    public float getValorPadrao() {
-        return valorPadrao;
-    }
-
-    public void setValorPadrao(float valorPadrao) {
-        this.valorPadrao = valorPadrao;
-    }
-
+  public void setValorPadrao(float valorPadrao) {
+    this.valorPadrao = valorPadrao;
+  }
 }

@@ -1,73 +1,73 @@
 package Ashow.business;
 
 public class Pagamento {
-    private static int pagamentoCancelados = 0;
-    private String formaPagamento;
-    private boolean cancelado;
-    private Double valorAPagar;
-    private Contrato contrato;
-    
-    private Pagamento() {
-        formaPagamento = null;
-        cancelado = false;
-        valorAPagar = null;
-    }
+  private static int pagamentoCancelados = 0;
+  private String formaPagamento;
+  private boolean cancelado;
+  private Double valorAPagar;
+  private Contrato contrato;
 
-    public Pagamento(String formaPagamento, Contrato contrato) {
-        this.formaPagamento = formaPagamento;
-        this.valorAPagar = contrato.getValor();
-        this.contrato = contrato;
-    }
+  private Pagamento() {
+    formaPagamento = null;
+    cancelado = false;
+    valorAPagar = null;
+  }
 
-    public static int getPagamentoCancelados() {
-        return pagamentoCancelados;
-    }
+  public Pagamento(String formaPagamento, Contrato contrato) {
+    this.formaPagamento = formaPagamento;
+    this.valorAPagar = contrato.getValor();
+    this.contrato = contrato;
+  }
 
-    public static void setPagamentoCancelados(int pagamentoCancelados) {
-        Pagamento.pagamentoCancelados = pagamentoCancelados;
-    }
+  public static int getPagamentoCancelados() {
+    return pagamentoCancelados;
+  }
 
-    public Contrato getContrato() {
-        return contrato;
-    }
+  public static void setPagamentoCancelados(int pagamentoCancelados) {
+    Pagamento.pagamentoCancelados = pagamentoCancelados;
+  }
 
-    public void setContrato(Contrato contrato) {
-        this.contrato = contrato;
-    }
+  public Contrato getContrato() {
+    return contrato;
+  }
 
-    public String getFormaPagamento() {
-        return formaPagamento;
-    }
+  public void setContrato(Contrato contrato) {
+    this.contrato = contrato;
+  }
 
-    public void setFormaPagamento(String formaPagamento) {
-        this.formaPagamento = formaPagamento;
-    }
+  public String getFormaPagamento() {
+    return formaPagamento;
+  }
 
-    public boolean isCancelado() {
-        return cancelado;
-    }
+  public void setFormaPagamento(String formaPagamento) {
+    this.formaPagamento = formaPagamento;
+  }
 
-    public void setCancelado(boolean cancelado) {
-        this.cancelado = cancelado;
-    }
+  public boolean isCancelado() {
+    return cancelado;
+  }
 
-    public double getValorAPagar() {
-        return valorAPagar;
-    }
+  public void setCancelado(boolean cancelado) {
+    this.cancelado = cancelado;
+  }
 
-    public void setValorAPagar(Double valorAPagar) {
-        this.valorAPagar = valorAPagar;
-    }
+  public double getValorAPagar() {
+    return valorAPagar;
+  }
 
-    public void setValorAPagar(double valorAPagar) {
-        this.valorAPagar = valorAPagar;
-    }
+  public void setValorAPagar(Double valorAPagar) {
+    this.valorAPagar = valorAPagar;
+  }
 
-    public boolean foiPago() {
-        return true;
-    }
+  public void setValorAPagar(double valorAPagar) {
+    this.valorAPagar = valorAPagar;
+  }
 
-    public boolean cancelar() {
-        return true;
-    }
+  public boolean foiPago() {
+    return true;
+  }
+
+  public boolean cancelar() {
+    return true;
+  }
 }
