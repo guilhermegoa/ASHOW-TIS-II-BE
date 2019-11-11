@@ -4,46 +4,11 @@
     <list default="true" id="298f3360-8d7d-4fd6-9b43-23cc330c2420" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Artista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Avaliacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Avaliacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Contratante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Contrato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Contrato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Endereco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Evento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Pagamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Pagamento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Proposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Proposta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/business/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoEventos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/dao/DaoUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/repository/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ArtistaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/ContratanteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/CorsFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/EventoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/LoginUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/LoginUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/MyResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/service/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ashow/service/Sistema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Artista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Contratante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Contrato.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Contrato.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Endereco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Endereco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Evento.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Proposta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Proposta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/business/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/dao/Dao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/dao/Dao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/dao/DaoEventos.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/dao/DaoEventos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/dao/DaoUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/dao/DaoUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/repository/Repository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/ArtistaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/CorsFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/EventoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/EventoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/MyResource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/Sistema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Ashow/service/Sistema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/artistas.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/contratantes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/eventos.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Ashow/bin/usuarios.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Ashow/service/contratanteService.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -209,6 +174,7 @@
       <workItem from="1573048634039" duration="1494000" />
       <workItem from="1573079321242" duration="7538000" />
       <workItem from="1573152737606" duration="6721000" />
+      <workItem from="1573430171399" duration="2486000" />
     </task>
     <servers />
   </component>
