@@ -11,10 +11,10 @@ import java.io.Serializable;
 
 public class Repository implements Serializable {
 
-  private static final String FILE = "src/main/java/Ashow/bin/usuarios.bin";
-  private static final String FILEARTISTAS = "src/main/java/Ashow/bin/artistas.bin";
-  private static final String FILECONTRATANTE = "src/main/java/Ashow/bin/contratantes.bin";
-  private static final String FILEEVENTOS = "src/main/java/Ashow/bin/eventos.bin";
+  private static final String FILE = "src/main/java/br/com/bin/usuarios.bin";
+  private static final String FILEARTISTAS = "src/main/java/br/com/bin/artistas.bin";
+  private static final String FILECONTRATANTE = "src/main/java/br/com/bin/contratantes.bin";
+  private static final String FILEEVENTOS = "src/main/java/br/com/bin/eventos.bin";
   public final Dao<Usuario, Integer> daoUsuarios = inicializarDao(FILE);
   public final Dao<Artista, Integer> daoArtistas = inicializarDao(FILEARTISTAS);
   public final Dao<Contratante, Integer> daoContratantes = inicializarDao(FILECONTRATANTE);
