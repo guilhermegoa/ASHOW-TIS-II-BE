@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Ashow</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link
+         rel="stylesheet"
+         type="text/css"
+         href="/assets/css/tela-inicial.css"
+      />
+      <link rel="shortcut icon" href="/assets/img/Logo.png" />
+   </head>
+
+   <body>
+      <!-- Container que reserva toda a aplicação -->
+      <div class="container">
+         <!-- Container que reserva o conteúdo: Apresentação -->
+
+         <div class="container-content">
+            <!-- Apresentação -->
+            <div class="content">
+               <article>
+                  A <span>Ashow</span> pretende aprimorar o mercado musical,
+                  juntando quem curte festa com música ao vivo com o próprio
+                  músico, sendo esse de qualquer estilo ou ritmo. A plataforma
+                  ajuda a realizar seus eventos com <span>segurança</span>,
+                  <span>praticidade</span> e <span>qualidade</span> de música.
+               </article>
+            </div>
+         </div>
+
+         <div class="container-login">
+            <img
+               class="logo-text"
+               src="/assets/img/ashowLogoText -img.png"
+               alt=""
+            />
+            <form action="#" id="formLog">
+               <div class="input-field">
+                  <input type="text" name="" required id="emailLog" />
+                  <label for="">Usuário</label>
+               </div>
+               <div class="input-field">
+                  <input type="password" name="" id="senhaLog" required />
+                  <label for="">Senha</label>
+               </div>
+               <div>
+                  <input
+                     type="submit"
+                     class="insert"
+                     id="tryLog-contratante"
+                     value="Login Contratante"
+                  />
+                  <input
+                     type="submit"
+                     class="insert"
+                     id="tryLog-artista"
+                     value="Login Artista"
+                  />
+               </div>
+            </form>
+            <a href="./pages/cadastro.html"
+               ><button class="cadastrar">Cadastrar</button></a
+            >
+         </div>
+      </div>
+
+      <section>
+         <div class="wave"></div>
+      </section>
+
+      <!-- SCRIPTS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="./assets/js/login.js"></script>
+   </body>
+</html>
