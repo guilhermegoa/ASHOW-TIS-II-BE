@@ -4,7 +4,7 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
-import Ashow.service.Main;
+import br.com.service.MainLocal;
 import org.glassfish.grizzly.http.server.HttpServer;
 
 import org.junit.After;
@@ -20,7 +20,7 @@ public class MyResourceTest {
     @Before
     public void setUp() throws Exception {
         // start the server
-        server = Main.startServer();
+        server = MainLocal.startServer();
         // create the client
         Client c = ClientBuilder.newClient();
 
@@ -30,12 +30,12 @@ public class MyResourceTest {
         // --
         // c.configuration().enable(new org.glassfish.jersey.media.json.JsonJaxbFeature());
 
-        target = c.target(Main.BASE_URI);
+        target = c.target(MainLocal.BASE_URI);
     }
 
     @After
     public void tearDown() throws Exception {
-        server.stop();
+        server.shutdown();
     }
 
     /**
