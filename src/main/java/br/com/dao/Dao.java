@@ -35,8 +35,10 @@ public abstract class Dao<T extends Usuario, K> implements Serializable {
       fileInputStream.close();
       objectInputStream.close();
     } catch (FileNotFoundException e) {
+      System.out.println("opc 1");
       saveInFile();
     } catch (IOException | ClassNotFoundException e) {
+      System.out.println("opc 2");
       e.printStackTrace();
     }
     return dados;

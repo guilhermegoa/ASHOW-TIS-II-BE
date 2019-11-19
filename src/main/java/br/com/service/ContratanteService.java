@@ -2,6 +2,7 @@ package br.com.service;
 
 import br.com.business.Contratante;
 import br.com.business.Usuario;
+import br.com.repository.Repository;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,14 +16,14 @@ public class ContratanteService {
   @Path("all")
   @Produces(MediaType.APPLICATION_JSON)
   public List<Contratante> getAll() {
-    return Sistema.getRepository().daoContratantes.getAll();
+    return Repository.getINSTANCE().daoContratantes.getAll();
   }
 
   @GET
   @Path("{email}")
   @Produces(MediaType.APPLICATION_JSON)
   public Contratante get(@PathParam("email") String email) {
-    Usuario a = Sistema.getRepository().daoUsuarios.get(email);
+    Usuario a = Repository.getINSTANCE().daoUsuarios.get(email);
     if (a instanceof Contratante) return ((Contratante) a);
     else return null;
   }
@@ -35,8 +36,8 @@ public class ContratanteService {
     Contratante newcontratante =
         new Contratante(contratante.getNome(), contratante.getSenha(), contratante.getEmail());
     System.out.println(newcontratante);
-    boolean b = Sistema.getRepository().daoUsuarios.add(newcontratante);
-    boolean a = Sistema.getRepository().daoContratantes.add(newcontratante);
+    boolean b = Repository.getINSTANCE().daoUsuarios.add(newcontratante);
+    boolean a = Repository.getINSTANCE().daoContratantes.add(newcontratante);
     System.out.println(b);
     System.out.println(a);
     return b && a;
@@ -48,8 +49,8 @@ public class ContratanteService {
   public boolean update(Contratante contratante) {
     System.out.println(contratante);
     String email = contratante.getEmail();
-    boolean a = Sistema.getRepository().daoUsuarios.update(email, contratante);
-    boolean b = Sistema.getRepository().daoContratantes.update(email, contratante);
+    boolean a = Repository.getINSTANCE().daoUsuarios.update(email, contratante);
+    boolean b = Repository.getINSTANCE().daoContratantes.update(email, contratante);
     System.out.println(a);
     System.out.println(b);
     return a && b;
@@ -60,7 +61,7 @@ public class ContratanteService {
   public boolean remove(@PathParam("email") String email) {
     System.out.println("DELETE Artista:");
     List<Usuario> contratantes =
-        Sistema.getRepository().daoUsuarios.getAll().stream()
+        Repository.getINSTANCE().daoUsuarios.getAll().stream()
             .filter(a -> a.getEmail().equals(email))
             .filter(a -> a instanceof Contratante)
             .collect(Collectors.toList());
@@ -68,8 +69,8 @@ public class ContratanteService {
       Contratante contratante = ((Contratante) contratantes.get(0));
       System.out.println(contratante);
       if (contratante != null) {
-        boolean a = Sistema.getRepository().daoUsuarios.remove(contratante);
-        boolean b = Sistema.getRepository().daoContratantes.remove(contratante);
+        boolean a = Repository.getINSTANCE().daoUsuarios.remove(contratante);
+        boolean b = Repository.getINSTANCE().daoContratantes.remove(contratante);
         System.out.println(a);
         System.out.println(b);
         return a && b;
@@ -83,7 +84,7 @@ public class ContratanteService {
   public boolean log(LoginUsuario lodDados) {
     System.out.println("Login contratante:");
     System.out.println(lodDados);
-    Contratante c = Sistema.getRepository().daoContratantes.get(lodDados.getEmail());
+    Contratante c = Repository.getINSTANCE().daoContratantes.get(lodDados.getEmail());
     if (c != null) {
       boolean resp = c.isSenha(lodDados.getSenha());
       return resp;
