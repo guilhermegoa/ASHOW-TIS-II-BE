@@ -1,8 +1,7 @@
 package br.com.business;
 
 import java.io.*;
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.*;
 
 public abstract class Usuario implements Serializable {
   private static int maxID = 0;
@@ -14,8 +13,13 @@ public abstract class Usuario implements Serializable {
   private int somaNotas;
   private float mediaAvaliacao;
   private Endereco endereco;
-  private Collection<Evento> eventos = new HashSet<Evento>();
+  private List<Evento> eventos = new ArrayList<Evento>();
   private Collection<Avaliacao> avaliacoes = new HashSet<Avaliacao>();
+
+  public boolean addEvento(Evento evento) {
+  System.out.println("ADICIONANDO EVENTO AO CONTRATANTE:\n"+evento);
+    return this.eventos.add(evento);
+  }
 
   public Usuario() {}
 
@@ -52,12 +56,12 @@ public abstract class Usuario implements Serializable {
     return false;
   }
 
-  public float calculaMediaAvaliacao() {
+  private float calculaMediaAvaliacao() {
     this.mediaAvaliacao = somaNotas / qntAvaliacoes;
     return mediaAvaliacao;
   }
 
-  public Collection<Evento> getEventos() {
+  public List<Evento> getEventos() {
     return eventos;
   }
 
@@ -76,7 +80,9 @@ public abstract class Usuario implements Serializable {
         + "\",\n\"media\": "
         + this.mediaAvaliacao
         + "\",\n\"senha\": "
-        + this.getSenha();
+        + this.getSenha()
+        + "\",\n\"eventos\": "
+        + this.getEventos();
   }
 
   public StringBuilder verEventos() {

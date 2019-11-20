@@ -23,9 +23,8 @@ public class ArtistaService {
   @Path("{email}")
   @Produces({MediaType.APPLICATION_JSON})
   public Artista get(@PathParam("email") String email) {
-    Usuario a = Repository.getINSTANCE().daoUsuarios.get(email);
-    if (a instanceof Artista) return ((Artista) a);
-    else return null;
+    Artista a = Repository.getINSTANCE().daoArtistas.get(email);
+    return a;
   }
 
   @POST

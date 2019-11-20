@@ -12,11 +12,6 @@ public class Contratante extends Usuario implements Serializable {
     super(nome, senha, email);
   }
 
-  public void criarEvento(Evento evento) {
-    this.getEventos().add(evento);
-    numeroEventos++;
-  }
-
   public void fecharEvento(Evento evento) {}
 
   @Override

@@ -14,7 +14,7 @@ public class Evento implements Serializable {
     private boolean open;
     private LocalDateTime data;
     private Endereco endereco;
-    private Contratante contratante;
+    private String emailContratante;
 
     public Evento() {
     }
@@ -26,7 +26,9 @@ public class Evento implements Serializable {
             String estilo,
             LocalDateTime data,
             Endereco endereco,
-            int quantidadeArtistas) {
+            int quantidadeArtistas,
+            String emailContratante) {
+        setEmailContratante(emailContratante);
         setQuantidadeArtistas(quantidadeArtistas);
         setNome(nome);
         setCapacidadeEsperada(capacidadeEsperada);
@@ -45,6 +47,14 @@ public class Evento implements Serializable {
 
     public static void setMaxIDEventos(int maxIDEventos) {
         Evento.maxIDEventos = maxIDEventos;
+    }
+
+    public String getEmailContratante() {
+        return emailContratante;
+    }
+
+    public void setEmailContratante(String emailContratante) {
+        this.emailContratante = emailContratante;
     }
 
     public String getNome() {
@@ -158,7 +168,9 @@ public class Evento implements Serializable {
                 + "\nEndereco:\n"
                 + this.endereco
                 + "\nQuantidade artistas:"
-                + this.quantidadeArtistas;
+                + this.quantidadeArtistas
+                + "\nContratante:"
+                + this.emailContratante;
     }
 
     @Override
