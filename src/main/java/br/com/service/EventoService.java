@@ -11,20 +11,21 @@ import java.util.stream.Collectors;
 
 @Path("evento")
 public class EventoService {
+    private Repository repository = Repository.getINSTANCE();
 
     @GET
     @Path("all")
     @Produces({MediaType.APPLICATION_JSON})
     public List<Evento> getAll() {
-        return Repository.getINSTANCE().daoEventos.getAll();
+        return repository.daoEventos.getAll();
     }
 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Evento get(@PathParam("id") int id) {
-        return Repository.getINSTANCE().daoEventos != null
-                ? Repository.getINSTANCE().daoEventos.get(id)
+        return repository.daoEventos != null
+                ? repository.daoEventos.get(id)
                 : null;
     }
 
@@ -34,7 +35,7 @@ public class EventoService {
     public boolean add(Evento evento) {
         System.out.println("ADD Evento: " + evento.getId());
         System.out.println("evento.getEmailContratante() = " + evento.getEmailContratante());
-        Contratante contratante = Repository.getINSTANCE().daoContratantes.get(evento.getEmailContratante());
+        Contratante contratante = repository.daoContratantes.get(evento.getEmailContratante());
         if (contratante != null) {
             Evento eventonew =
                     new Evento(
@@ -46,11 +47,11 @@ public class EventoService {
                             evento.getEndereco(),
                             evento.getQuantidadeArtistas(),
                             evento.getEmailContratante());
-            boolean a =contratante.addEvento(eventonew);
-            boolean b = Repository.getINSTANCE().daoEventos.add(eventonew);
+            boolean a = repository.daoContratantes.addEvento(eventonew, evento.getEmailContratante());
+            boolean b = repository.daoEventos.add(eventonew);
             System.out.println(a);
             System.out.println(b);
-            return a&&b;
+            return a && b;
         } else return false;
     }
 
@@ -60,7 +61,7 @@ public class EventoService {
     public boolean update(Evento evento) {
         System.out.println(evento);
         int id = evento.getId();
-        boolean a = Repository.getINSTANCE().daoEventos.update(id, evento);
+        boolean a = repository.daoEventos.update(id, evento);
         System.out.println(a);
         return a;
     }
@@ -70,17 +71,54 @@ public class EventoService {
     public boolean remove(@PathParam("id") int id) {
         System.out.println("DELETE Evento:");
         List<Evento> eventos =
-                Repository.getINSTANCE().daoEventos.getAll().stream()
+                repository.daoEventos.getAll().stream()
                         .filter(a -> a.getId() == (id))
                         .collect(Collectors.toList());
         if (!eventos.isEmpty()) {
             Evento evento = (eventos.get(0));
             System.out.println(evento);
             if (evento != null) {
-                boolean a = Repository.getINSTANCE().daoEventos.remove(evento);
+                boolean a = repository.daoEventos.remove(evento);
                 System.out.println(a);
                 return a;
             } else return false;
         } else return false;
+    }
+
+    @GET
+    @Path("{id}/add/artista/pendente/{email}")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean addArtistaPendente(@PathParam("id") int id, @PathParam("email") String email) {
+        if (repository.daoEventos.get(id).isOpen()) {
+            boolean a = repository.daoEventos.addArtistaPendente(id, email);
+            boolean b = repository.daoArtistas.addEvento(repository.daoEventos.get(id), email);
+            return a && b;
+        } else return false;
+    }
+
+    @DELETE
+    @Path("{id}/delete/artista/pendente/{email}")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean deleteArtistaPendente(@PathParam("id") int id, @PathParam("email") String email) {
+        boolean a = repository.daoEventos.removerArtistaPendente(id, email);
+        boolean b = repository.daoArtistas.removerEvento(repository.daoEventos.get(id), email);
+        return a && b;
+    }
+
+    @DELETE
+    @Path("{id}/delete/artista/confirmado/{email}")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean deleteArtistaConfirmado(@PathParam("id") int id, @PathParam("email") String email) {
+        boolean a = repository.daoEventos.removerArtistaConfirmado(id, email);
+        boolean b = repository.daoArtistas.removerEvento(repository.daoEventos.get(id), email);
+        return a && b;
+    }
+
+    @PUT
+    @Path("{id}/comfirmar/artista/pendente/{email}")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean confirmarArtistaPendente(@PathParam("id") int id, @PathParam("email") String email) {
+        boolean a = repository.daoEventos.confirmarArtistaPendente(id, email);
+        return a;
     }
 }

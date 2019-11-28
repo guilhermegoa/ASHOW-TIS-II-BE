@@ -2,6 +2,8 @@ package br.com.business;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Evento implements Serializable {
     private static int maxIDEventos = 0;
@@ -12,22 +14,17 @@ public class Evento implements Serializable {
     private String estilo;
     private String nome;
     private boolean open;
+    private boolean finalizado;
     private LocalDateTime data;
     private Endereco endereco;
     private String emailContratante;
+    private Set<String> emailArtistasPendente = new LinkedHashSet<>();
+    private Set<String> emailArtistasConfirmados = new LinkedHashSet<>();
 
     public Evento() {
     }
 
-    public Evento(
-            String nome,
-            int capacidadeEsperada,
-            double valor,
-            String estilo,
-            LocalDateTime data,
-            Endereco endereco,
-            int quantidadeArtistas,
-            String emailContratante) {
+    public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco, int quantidadeArtistas, String emailContratante) {
         setEmailContratante(emailContratante);
         setQuantidadeArtistas(quantidadeArtistas);
         setNome(nome);
@@ -47,6 +44,48 @@ public class Evento implements Serializable {
 
     public static void setMaxIDEventos(int maxIDEventos) {
         Evento.maxIDEventos = maxIDEventos;
+    }
+
+    public boolean isFinalizado() {
+        return finalizado;
+    }
+
+    public void setFinalizado(boolean finalizado) {
+        this.finalizado = finalizado;
+    }
+
+    public Set<String> getEmailArtistasPendente() {
+        return emailArtistasPendente;
+    }
+
+    public void setEmailArtistasPendente(Set<String> emailArtistasPendente) {
+        this.emailArtistasPendente = emailArtistasPendente;
+    }
+
+    public Set<String> getEmailArtistasConfirmados() {
+        return emailArtistasConfirmados;
+    }
+
+    public void setEmailArtistasConfirmados(Set<String> emailArtistasConfirmados) {
+        this.emailArtistasConfirmados = emailArtistasConfirmados;
+    }
+
+    public boolean addArtistaPendente(String emaiArtista) {
+        return emailArtistasPendente.add(emaiArtista);
+    }
+
+    public boolean removerArtistaPendente(String emailArtista) {
+        return emailArtistasPendente.removeIf(o -> o.equals(emailArtista));
+    }
+
+    public boolean removerArtistaConfirmado(String emailArtista) {
+        return emailArtistasConfirmados.remove(emailArtista);
+    }
+
+    public boolean confirmarArtistaPendente(String emailArtista) {
+        if (!removerArtistaPendente(emailArtista)) return false;
+        emailArtistasConfirmados.add(emailArtista);
+        return true;
     }
 
     public String getEmailContratante() {
@@ -170,7 +209,9 @@ public class Evento implements Serializable {
                 + "\nQuantidade artistas:"
                 + this.quantidadeArtistas
                 + "\nContratante:"
-                + this.emailContratante;
+                + this.emailContratante
+                + "\nNumero De Artista pendentes:"
+                + this.emailArtistasPendente.size();
     }
 
     @Override

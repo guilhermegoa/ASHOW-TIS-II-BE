@@ -7,8 +7,8 @@ import br.com.repository.Repository;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Path("contratante")
@@ -25,20 +25,16 @@ public class ContratanteService {
     @Path("{email}")
     @Produces(MediaType.APPLICATION_JSON)
     public Contratante get(@PathParam("email") String email) {
-        System.out.println("get contratante");
-        Contratante a = Repository.getINSTANCE().daoContratantes.get(email);
-        System.out.println(a);
-        return (a);
+        return Repository.getINSTANCE().daoContratantes.get(email);
     }
 
     @GET
     @Path("{email}/eventos")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Evento> getEventos(@PathParam("email") String email) {
-        System.out.println("get list eventos");
-        Contratante contratante = Repository.getINSTANCE().daoContratantes.get(email);
-        System.out.println(contratante);
-        return contratante.getEventos();
+        ArrayList e = new ArrayList();
+        Repository.getINSTANCE().daoContratantes.get(email).getEventos().forEach(o -> e.add(Repository.getINSTANCE().daoEventos.get(o)));
+        return e;
     }
 
     @POST

@@ -37,14 +37,10 @@ public class Artista extends Usuario implements Serializable {
     return "0";
   }
 
-  public boolean addEventos(Evento evento) {
-    if (evento.isOpen()) {
-      getEventos().add(evento);
-      evento.aumentarArtistas();
-      numeroEventos++;
-      return true;
-    }
-    return false;
+  @Override
+  public boolean addEvento(Evento evento) {
+    numeroEventos++;
+    return super.addEvento(evento);
   }
 
   public boolean removerEvento(Evento evento) {
