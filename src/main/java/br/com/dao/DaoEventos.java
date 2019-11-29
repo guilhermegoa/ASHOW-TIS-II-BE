@@ -42,7 +42,7 @@ public class DaoEventos implements Serializable {
         return dados;
     }
 
-    private boolean saveInFile() {
+    public boolean saveInFile() {
         try {
             fileOutputStream = new FileOutputStream(file);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
