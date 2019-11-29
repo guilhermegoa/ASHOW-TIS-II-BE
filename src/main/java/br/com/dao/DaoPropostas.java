@@ -1,12 +1,15 @@
 package br.com.dao;
 
+import br.com.business.Contratante;
 import br.com.business.Evento;
 import br.com.business.Proposta;
+import br.com.repository.Repository;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class DaoPropostas implements Serializable {
@@ -19,7 +22,7 @@ public class DaoPropostas implements Serializable {
         file = new File(filename);
         dados = readFromFile();
         if (dados.stream().mapToInt(Proposta::getId).count() > 0) {
-            Evento.setMaxIDEventos(dados.stream().mapToInt(Proposta::getId).max().getAsInt());
+            Proposta.setMaxId(dados.stream().mapToInt(Proposta::getId).max().getAsInt());
         } else Proposta.setMaxId(0);
     }
 
@@ -95,8 +98,7 @@ public class DaoPropostas implements Serializable {
     }
 
     public boolean add(Proposta proposta) {
-        boolean jaECadastrado = getAll().stream().anyMatch(a -> a.getId() == (proposta.getId()));
-        if (jaECadastrado) return false;
+        if (getAll().stream().anyMatch(a -> a.equals(proposta))) return false;
         else return dados.add(proposta) && saveInFile();
     }
 
@@ -120,4 +122,24 @@ public class DaoPropostas implements Serializable {
         saveInFile();
         super.finalize();
     }
+
+//    public boolean attall() {
+//        Repository repository = Repository.getINSTANCE();
+//        repository.daoPropostas.getAll().stream().forEach(proposta -> {
+//            final boolean[] achou = {false};
+//            if (proposta.isArtistaAceitou() && proposta.isContratanteAceitou()) {
+//                repository.daoEventos.get(proposta.getIdEvento()).getEmailArtistasPendente().forEach(new Consumer<String>() {
+//                    @Override
+//                    public void accept(String s) {
+//                        if (!achou[0]) {
+//                            achou[0] = s.equals(proposta.getEmailArtista());
+//                        }
+//                    }
+//                });
+//                if (!achou[0])
+//                    repository.daoEventos.addArtistaPendente(proposta.getIdEvento(),proposta.getEmailArtista());
+//            }
+//        });
+//        return false;
+//    }
 }

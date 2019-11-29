@@ -1,6 +1,8 @@
 package br.com.business;
 
-public class Proposta {
+import java.io.Serializable;
+
+public class Proposta implements Serializable {
     private static int maxId;
     private int id;
     private boolean artistaAceitou;
@@ -10,6 +12,9 @@ public class Proposta {
     private int idEvento;
     private double valor;
 
+    public Proposta() {
+    }
+
     public Proposta(String artista, String contratante, int evento, double valor) {
         setEmailArtista(artista);
         setIdEvento(evento);
@@ -17,11 +22,20 @@ public class Proposta {
         setValor(valor);
         setArtistaAceitou(false);
         setContratanteAceitou(false);
-        setId(maxId++);
+        maxId++;
+        setId(maxId);
     }
 
     public static void setMaxId(int maxId) {
         Proposta.maxId = maxId;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Proposta) {
+            Proposta proposta = ((Proposta) obj);
+            return proposta.getIdEvento() == this.idEvento && proposta.emailArtista.equals(emailArtista) && proposta.emailContratante.equals(emailContratante);
+        } else return false;
     }
 
     public int getId() {

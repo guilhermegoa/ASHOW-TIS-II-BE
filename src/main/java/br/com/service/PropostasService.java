@@ -33,19 +33,58 @@ public class PropostasService {
     }
 
     @POST
-    @Path("add")
+    @Path("contratante/add")
     @Consumes({MediaType.APPLICATION_JSON})
-    public boolean add(Proposta proposta) {
-        System.out.println("ADD proposta: " + proposta.getId());
+    public boolean contratanteAdd(Proposta proposta) {
         Contratante contratante = repository.daoContratantes.get(proposta.getEmailContratante());
         Artista artista = repository.daoArtistas.get(proposta.getEmailArtista());
         Evento evento = repository.daoEventos.get(proposta.getIdEvento());
         if (contratante != null && artista != null && evento != null) {
             Proposta propostanew =
                     new Proposta(proposta.getEmailArtista(), proposta.getEmailContratante(), proposta.getIdEvento(), proposta.getValor());
+            propostanew.contratanteAceita();
             boolean a = repository.daoPropostas.add(propostanew);
-            System.out.println(a);
+            if (!a) {
+                final Proposta[] propostaComp = new Proposta[1];
+                repository.daoPropostas.getAll().forEach(o -> {
+                    if (o.equals(propostanew)) {
+                        propostaComp[0] = o;
+                    }
+                });
+                if (propostaComp[0].isArtistaAceitou()) {
+                    propostaComp[0].contratanteAceita();
+                    return repository.daoEventos.addArtistaPendente(proposta.getIdEvento(), proposta.getEmailArtista()) && repository.daoPropostas.saveInFile();
+                }
+                return false;
+            }
             return a;
+        } else return false;
+    }
+
+    @POST
+    @Path("artista/add")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public boolean artistaAdd(Proposta proposta) {
+        Contratante contratante = repository.daoContratantes.get(proposta.getEmailContratante());
+        Artista artista = repository.daoArtistas.get(proposta.getEmailArtista());
+        Evento evento = repository.daoEventos.get(proposta.getIdEvento());
+        if (contratante != null && artista != null && evento != null) {
+            Proposta propostanew = new Proposta(proposta.getEmailArtista(), proposta.getEmailContratante(), proposta.getIdEvento(), proposta.getValor());
+            propostanew.artistaAceita();
+            boolean a = repository.daoPropostas.add(propostanew);
+            if (!a) {
+                final Proposta[] propostaComp = new Proposta[1];
+                repository.daoPropostas.getAll().forEach(o -> {
+                    if (o.equals(propostanew)) {
+                        propostaComp[0] = o;
+                    }
+                });
+                if (propostaComp[0].isContratanteAceitou() && !propostaComp[0].isArtistaAceitou()) {
+                    propostaComp[0].artistaAceita();
+                    return repository.daoEventos.addArtistaPendente(proposta.getIdEvento(), proposta.getEmailArtista()) && repository.daoPropostas.saveInFile();
+                }
+                return false;
+            } else return true;
         } else return false;
     }
 
@@ -84,10 +123,10 @@ public class PropostasService {
     @Path("attall")
     @Produces({MediaType.TEXT_PLAIN})
     public boolean attall() {
+        final boolean[] achou = {false, false};
         repository.daoPropostas.getAll().stream().forEach(new Consumer<Proposta>() {
             @Override
             public void accept(Proposta proposta) {
-                final boolean[] achou = {false};
                 if (proposta.isArtistaAceitou() && proposta.isContratanteAceitou()) {
                     repository.daoEventos.get(proposta.getIdEvento()).getEmailArtistasPendente().forEach(new Consumer<String>() {
                         @Override
@@ -97,12 +136,14 @@ public class PropostasService {
                             }
                         }
                     });
-                    if (!achou[0])
-                        repository.daoEventos.addArtistaPendente(proposta.getIdEvento(),proposta.getEmailArtista());
+                    if (!achou[0]) {
+                        repository.daoEventos.addArtistaPendente(proposta.getIdEvento(), proposta.getEmailArtista());
+                        achou[1] = true;
+                    }
                 }
             }
         });
-        return false;
+        return achou[1];
     }
 
 }
