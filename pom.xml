@@ -11,15 +11,15 @@
     <version>0.1</version>
     <name>ASHOW-TIS-II-BE</name>
 
-    <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>br.com</id>
-            <name>ASHOW-TIS-II-BE</name>
-            <url>file:///home/myfolder/.m2</url>
-            <layout>default</layout>
-        </repository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <uniqueVersion>false</uniqueVersion>-->
+<!--            <id>br.com</id>-->
+<!--            <name>ASHOW-TIS-II-BE</name>-->
+<!--            <url>file:///home/myfolder/.m2</url>-->
+<!--            <layout>default</layout>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
 
     <dependencyManagement>
         <dependencies>
@@ -134,11 +134,11 @@
 <!--            <scope>provided</scope>-->
 <!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-deploy-plugin</artifactId>
-            <version>2.8.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-deploy-plugin</artifactId>-->
+<!--            <version>2.8.2</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
@@ -192,21 +192,21 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.codehaus.mojo</groupId>-->
-<!--                <artifactId>exec-maven-plugin</artifactId>-->
-<!--                <version>1.2.1</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>java</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <mainClass>Ashow.service.MainLocal</mainClass> &lt;!&ndash; Aqui eu incluo minhas informações &ndash;&gt;-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>Ashow.service.MainLocal</mainClass> <!-- Aqui eu incluo minhas informações -->
+                </configuration>
+            </plugin>
 
         </plugins>
     </build>
