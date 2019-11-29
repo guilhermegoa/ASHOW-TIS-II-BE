@@ -114,6 +114,12 @@
             <version>2.17</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.6.0</version>
+        </dependency>
 
 
     </dependencies>
@@ -183,6 +189,7 @@
                     <mainClass>Ashow.service.MainLocal</mainClass> <!-- Aqui eu incluo minhas informações -->
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
