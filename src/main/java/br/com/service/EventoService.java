@@ -46,7 +46,8 @@ public class EventoService {
                             evento.getData(),
                             evento.getEndereco(),
                             evento.getQuantidadeArtistas(),
-                            evento.getEmailContratante());
+                            evento.getEmailContratante(),
+                            evento.getDataUriFoto());
             boolean a = repository.daoContratantes.addEvento(eventonew, evento.getEmailContratante());
             boolean b = repository.daoEventos.add(eventonew);
             System.out.println(a);

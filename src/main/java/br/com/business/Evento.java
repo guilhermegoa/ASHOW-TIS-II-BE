@@ -11,6 +11,7 @@ public class Evento implements Serializable {
     private int capacidadeEsperada;
     private int quantidadeArtistas;
     private double valor;
+    private String dataUriFoto;
     private String estilo;
     private String nome;
     private boolean open;
@@ -24,7 +25,8 @@ public class Evento implements Serializable {
     public Evento() {
     }
 
-    public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco, int quantidadeArtistas, String emailContratante) {
+    public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco, int quantidadeArtistas, String emailContratante, String dataUriFoto) {
+        setDataUriFoto(dataUriFoto);
         setEmailContratante(emailContratante);
         setQuantidadeArtistas(quantidadeArtistas);
         setNome(nome);
@@ -44,6 +46,14 @@ public class Evento implements Serializable {
 
     public static void setMaxIDEventos(int maxIDEventos) {
         Evento.maxIDEventos = maxIDEventos;
+    }
+
+    public String getDataUriFoto() {
+        return dataUriFoto;
+    }
+
+    public void setDataUriFoto(String dataUriFoto) {
+        this.dataUriFoto = dataUriFoto;
     }
 
     public boolean isFinalizado() {
