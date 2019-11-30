@@ -66,7 +66,7 @@ public class PropostasService {
             boolean a = repository.daoPropostas.add(propostanew);
             System.out.println("a = " + a);
             if (!a) {
-                Proposta.setMaxId(propostanew.getId() - 1);
+                Proposta.setMaxId(Proposta.getMaxId() - 1);
                 final Proposta[] propostaComp = new Proposta[1];
                 repository.daoPropostas.getAll().forEach(o -> {
                     if (o.equals(propostanew)) {
@@ -101,6 +101,7 @@ public class PropostasService {
             boolean a = repository.daoPropostas.add(propostanew);
             System.out.println("a = " + a);
             if (!a) {
+                Proposta.setMaxId(Proposta.getMaxId() - 1);
                 final Proposta[] propostaComp = new Proposta[1];
                 repository.daoPropostas.getAll().forEach(o -> {
                     if (o.equals(propostanew)) {

@@ -12,6 +12,10 @@ public class Proposta implements Serializable {
     private int idEvento;
     private double valor;
 
+    public static int getMaxId() {
+        return maxId;
+    }
+
     public Proposta() {
     }
 
