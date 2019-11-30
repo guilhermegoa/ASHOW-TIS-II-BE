@@ -80,8 +80,8 @@ public class DaoNotificacao implements Serializable {
         if (!x.isEmpty()) {
             Notificacao notificacao1 = x.get(0);
             System.out.println("ANTES:" + notificacao1);
-            if (notificacao.getIdProposta() != notificacao1.getIdProposta())
-                notificacao1.setIdProposta(notificacao.getIdProposta());
+            if (notificacao.getProposta() != notificacao1.getProposta())
+                notificacao1.setProposta(notificacao.getProposta());
             if (notificacao.isVisualizou() != notificacao1.isVisualizou())
                 notificacao1.setVisualizou(notificacao.isVisualizou());
             System.out.println("DEPOIS:" + notificacao1);

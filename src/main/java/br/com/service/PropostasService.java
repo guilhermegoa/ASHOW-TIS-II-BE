@@ -1,9 +1,6 @@
 package br.com.service;
 
-import br.com.business.Artista;
-import br.com.business.Contratante;
-import br.com.business.Evento;
-import br.com.business.Proposta;
+import br.com.business.*;
 import br.com.repository.Repository;
 
 import javax.ws.rs.*;
@@ -82,8 +79,7 @@ public class PropostasService {
                     return b && c && repository.daoPropostas.saveInFile();
                 }
                 return false;
-            }
-            return true;
+            } else return repository.daoNotificacao.add(new Notificacao(propostanew));
         } else return false;
     }
 
@@ -117,7 +113,7 @@ public class PropostasService {
                     return b && c && repository.daoPropostas.saveInFile();
                 }
                 return false;
-            } else return true;
+            } else return repository.daoNotificacao.add(new Notificacao(propostanew));
         } else return false;
     }
 
@@ -147,21 +143,25 @@ public class PropostasService {
             if (proposta != null) {
                 boolean a = repository.daoPropostas.remove(proposta);
                 boolean b = false;
+                boolean c = repository.daoArtistas.get(proposta.getEmailArtista()).removeEvento(repository.daoEventos.get(proposta.getIdEvento()));
                 Set<String> artistasPenDoEvento = repository.daoEventos.get(proposta.getIdEvento()).getEmailArtistasPendente();
                 Set<String> artistasConfDoEvento = repository.daoEventos.get(proposta.getIdEvento()).getEmailArtistasConfirmados();
                 if (artistasPenDoEvento.contains(proposta.getEmailArtista())) {
                     b = artistasPenDoEvento.removeIf(o -> o.equals(proposta.getEmailArtista()));
                     System.out.println(a);
                     System.out.println(b);
-                    return a && b && repository.daoEventos.saveInFile();
+                    System.out.println(c);
+                    return a && b && c && repository.daoEventos.saveInFile();
                 } else if (artistasConfDoEvento.contains(proposta.getEmailArtista())) {
                     b = artistasConfDoEvento.removeIf(o -> o.equals(proposta.getEmailArtista()));
                     System.out.println(a);
                     System.out.println(b);
-                    return a && b && repository.daoEventos.saveInFile();
+                    System.out.println(c);
+                    return a && b && c && repository.daoEventos.saveInFile();
                 }
                 System.out.println(a);
-                return a && repository.daoEventos.saveInFile();
+                System.out.println(c);
+                return a && c && repository.daoEventos.saveInFile();
             } else return false;
         } else return false;
     }

@@ -43,10 +43,6 @@ public class Artista extends Usuario implements Serializable {
     return super.addEvento(evento);
   }
 
-  public boolean removerEvento(Evento evento) {
-    return false;
-  }
-
   @Override
   public String toString() {
     return super.toString()

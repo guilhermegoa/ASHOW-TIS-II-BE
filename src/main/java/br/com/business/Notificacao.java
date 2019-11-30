@@ -5,22 +5,22 @@ import java.io.Serializable;
 public class Notificacao implements Serializable {
     private static int maxId;
     private int id;
-    private int idProposta;
+    private Proposta proposta;
     private boolean visualizou;
 
     public Notificacao() {
     }
 
-    public int getIdProposta() {
-        return idProposta;
+    public Proposta getProposta() {
+        return proposta;
     }
 
-    public void setIdProposta(int idProposta) {
-        this.idProposta = idProposta;
+    public void setProposta(Proposta proposta) {
+        this.proposta = proposta;
     }
 
-    public Notificacao(int idProposta) {
-        setIdProposta(idProposta);
+    public Notificacao(Proposta idProposta) {
+        setProposta(idProposta);
         setVisualizou(false);
         maxId++;
         setId(maxId);
@@ -50,7 +50,7 @@ public class Notificacao implements Serializable {
     public boolean equals(Object obj) {
         if (obj instanceof Notificacao) {
             Notificacao notificacao = ((Notificacao) obj);
-            return notificacao.idProposta == this.idProposta;
+            return notificacao.proposta == this.proposta;
         } else return false;
     }
 
