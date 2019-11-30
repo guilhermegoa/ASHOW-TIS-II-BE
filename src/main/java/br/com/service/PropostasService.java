@@ -10,7 +10,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.Set;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 @Path("proposta")
@@ -59,13 +58,13 @@ public class PropostasService {
         Contratante contratante = repository.daoContratantes.get(proposta.getEmailContratante());
         Artista artista = repository.daoArtistas.get(proposta.getEmailArtista());
         Evento evento = repository.daoEventos.get(proposta.getIdEvento());
-        System.out.println(contratante != null && artista != null && evento != null && evento.getEmailContratante().equals(proposta.getEmailContratante()));
+//        System.out.println(contratante != null && artista != null && evento != null && evento.getEmailContratante().equals(proposta.getEmailContratante()));
         if (contratante != null && artista != null && evento != null && evento.getEmailContratante().equals(proposta.getEmailContratante())) {
             Proposta propostanew =
                     new Proposta(proposta.getEmailArtista(), proposta.getEmailContratante(), proposta.getIdEvento(), proposta.getValor());
             propostanew.contratanteAceita();
             boolean a = repository.daoPropostas.add(propostanew);
-            System.out.println(a);
+            System.out.println("a = " + a);
             if (!a) {
                 Proposta.setMaxId(propostanew.getId() - 1);
                 final Proposta[] propostaComp = new Proposta[1];
@@ -76,9 +75,11 @@ public class PropostasService {
                 });
                 if (propostaComp[0].isArtistaAceitou()) {
                     propostaComp[0].contratanteAceita();
-                    return repository.daoEventos.addArtistaPendente(proposta.getIdEvento(), proposta.getEmailArtista()) &&
-                            repository.daoArtistas.addEvento(repository.daoEventos.get(proposta.getIdEvento()), proposta.getEmailArtista()) &&
-                            repository.daoPropostas.saveInFile();
+                    boolean b = repository.daoEventos.addArtistaPendente(proposta.getIdEvento(), proposta.getEmailArtista());
+                    boolean c = repository.daoArtistas.addEvento(repository.daoEventos.get(proposta.getIdEvento()), proposta.getEmailArtista());
+                    System.out.println("b = " + b);
+                    System.out.println("c = " + c);
+                    return b && c && repository.daoPropostas.saveInFile();
                 }
                 return false;
             }
@@ -93,11 +94,12 @@ public class PropostasService {
         Contratante contratante = repository.daoContratantes.get(proposta.getEmailContratante());
         Artista artista = repository.daoArtistas.get(proposta.getEmailArtista());
         Evento evento = repository.daoEventos.get(proposta.getIdEvento());
-        System.out.println(contratante != null && artista != null && evento != null && evento.getEmailContratante().equals(proposta.getEmailContratante()));
+//        System.out.println(contratante != null && artista != null && evento != null && evento.getEmailContratante().equals(proposta.getEmailContratante()));
         if (contratante != null && artista != null && evento != null && evento.getEmailContratante().equals(proposta.getEmailContratante())) {
             Proposta propostanew = new Proposta(proposta.getEmailArtista(), proposta.getEmailContratante(), proposta.getIdEvento(), proposta.getValor());
             propostanew.artistaAceita();
             boolean a = repository.daoPropostas.add(propostanew);
+            System.out.println("a = " + a);
             if (!a) {
                 final Proposta[] propostaComp = new Proposta[1];
                 repository.daoPropostas.getAll().forEach(o -> {
@@ -107,9 +109,11 @@ public class PropostasService {
                 });
                 if (propostaComp[0].isContratanteAceitou() && !propostaComp[0].isArtistaAceitou()) {
                     propostaComp[0].artistaAceita();
-                    return repository.daoEventos.addArtistaPendente(proposta.getIdEvento(), proposta.getEmailArtista()) &&
-                            repository.daoArtistas.addEvento(repository.daoEventos.get(proposta.getIdEvento()), proposta.getEmailArtista()) &&
-                            repository.daoPropostas.saveInFile();
+                    boolean b = repository.daoEventos.addArtistaPendente(proposta.getIdEvento(), proposta.getEmailArtista());
+                    boolean c = repository.daoArtistas.addEvento(repository.daoEventos.get(proposta.getIdEvento()), proposta.getEmailArtista());
+                    System.out.println("b = " + b);
+                    System.out.println("c = " + c);
+                    return b && c && repository.daoPropostas.saveInFile();
                 }
                 return false;
             } else return true;
@@ -146,12 +150,17 @@ public class PropostasService {
                 Set<String> artistasConfDoEvento = repository.daoEventos.get(proposta.getIdEvento()).getEmailArtistasConfirmados();
                 if (artistasPenDoEvento.contains(proposta.getEmailArtista())) {
                     b = artistasPenDoEvento.removeIf(o -> o.equals(proposta.getEmailArtista()));
+                    System.out.println(a);
+                    System.out.println(b);
+                    return a && b && repository.daoEventos.saveInFile();
                 } else if (artistasConfDoEvento.contains(proposta.getEmailArtista())) {
                     b = artistasConfDoEvento.removeIf(o -> o.equals(proposta.getEmailArtista()));
+                    System.out.println(a);
+                    System.out.println(b);
+                    return a && b && repository.daoEventos.saveInFile();
                 }
                 System.out.println(a);
-                System.out.println(b);
-                return a && b && repository.daoEventos.saveInFile();
+                return a && repository.daoEventos.saveInFile();
             } else return false;
         } else return false;
     }
