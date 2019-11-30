@@ -8,8 +8,8 @@ public class Contratante extends Usuario implements Serializable {
 
   public Contratante() {}
 
-  public Contratante(String nome, String senha, String email) {
-    super(nome, senha, email);
+  public Contratante(String nome, String senha, String email, String dataUriFoto) {
+    super(nome, senha, email, dataUriFoto);
   }
 
   public void fecharEvento(Evento evento) {}

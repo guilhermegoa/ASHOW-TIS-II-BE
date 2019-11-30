@@ -41,7 +41,8 @@ public class ArtistaService {
                         artista.getSenha(),
                         artista.getEmail(),
                         artista.getEstilo(),
-                        artista.getTipoArtista());
+                        artista.getTipoArtista(),
+                        artista.getDataUriFoto());
         System.out.println(artistanew);
         boolean b = Repository.getINSTANCE().daoUsuarios.add(artistanew);
         boolean a = Repository.getINSTANCE().daoArtistas.add(artistanew);

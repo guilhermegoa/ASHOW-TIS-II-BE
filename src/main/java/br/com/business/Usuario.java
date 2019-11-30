@@ -8,6 +8,7 @@ import java.util.List;
 
 public abstract class Usuario implements Serializable {
     private static int maxID = 0;
+    private String dataUriFoto;
     private String senha;
     private String email;
     private String nome;
@@ -22,7 +23,16 @@ public abstract class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String nome, String senha, String email) {
+    public String getDataUriFoto() {
+        return dataUriFoto;
+    }
+
+    public void setDataUriFoto(String dataUriFoto) {
+        this.dataUriFoto = dataUriFoto;
+    }
+
+    public Usuario(String nome, String senha, String email, String dataUriFoto) {
+        setDataUriFoto(dataUriFoto);
         setNome(nome);
         setSenha(senha);
         setEmail(email);

@@ -41,7 +41,7 @@ public class PropostasService {
     @GET
     @Path("evento/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public List<Proposta> getPropContratante(@PathParam("id") int id) {
+    public List<Proposta> getPropEvento(@PathParam("id") int id) {
         return repository.daoPropostas.getAll().stream().filter(o -> o.getIdEvento() == (id)).collect(Collectors.toList());
     }
 

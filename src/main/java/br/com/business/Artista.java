@@ -21,8 +21,8 @@ public class Artista extends Usuario implements Serializable {
       String senha,
       String email,
       String estilo,
-      String tipoArtista) {
-    super(nome, senha, email);
+      String tipoArtista,String dataUriFoto) {
+    super(nome, senha, email,dataUriFoto);
     setNomeArtistico(nomeArtistico);
     setEstilo(estilo);
     setTipoArtista(tipoArtista);
