@@ -1,15 +1,12 @@
 package br.com.dao;
 
-import br.com.business.Contratante;
-import br.com.business.Evento;
+import br.com.business.Avaliacao;
 import br.com.business.Proposta;
-import br.com.repository.Repository;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class DaoPropostas implements Serializable {
