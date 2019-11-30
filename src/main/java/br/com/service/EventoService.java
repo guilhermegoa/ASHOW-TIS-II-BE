@@ -122,4 +122,13 @@ public class EventoService {
         boolean a = repository.daoEventos.confirmarArtistaPendente(id, email);
         return a;
     }
+
+    @PUT
+    @Path("{id}/fechar")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean fecharEvento(@PathParam("id") int id) {
+        boolean a = repository.daoEventos.fecharEvento(id);
+        return a;
+    }
+
 }

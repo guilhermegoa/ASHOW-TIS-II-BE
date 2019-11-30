@@ -135,4 +135,9 @@ public class DaoEventos implements Serializable {
     public boolean confirmarArtistaPendente(int id, String emailArtista) {
         return get(id).confirmarArtistaPendente(emailArtista) && saveInFile();
     }
+
+    public boolean fecharEvento(int id) {
+        get(id).setOpen(false);
+        return saveInFile();
+    }
 }
