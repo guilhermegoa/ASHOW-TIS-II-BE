@@ -23,21 +23,21 @@ public class NotificacaoService {
     @Path("contratante/{email}")
     @Produces({MediaType.APPLICATION_JSON})
     public List<Notificacao> getNotContratante(@PathParam("email") String email) {
-        return repository.daoNotificacao.getAll().stream().filter(o -> repository.daoPropostas.get(o.getProposta().getId()).getEmailContratante().equals(email)).collect(Collectors.toList());
+        return repository.daoNotificacao.getAll().stream().filter(o->o.getParaTipo().equals(Notificacao.CONTRATANTE)).filter(o->o.getProposta().getEmailContratante().equals(email)).collect(Collectors.toList());
     }
 
     @GET
     @Path("artista/{email}")
     @Produces({MediaType.APPLICATION_JSON})
     public List<Notificacao> getNotArtista(@PathParam("email") String email) {
-        return repository.daoNotificacao.getAll().stream().filter(o -> repository.daoPropostas.get(o.getProposta().getId()).getEmailArtista().equals(email)).collect(Collectors.toList());
+        return repository.daoNotificacao.getAll().stream().filter(o->o.getParaTipo().equals(Notificacao.ARTISTA)).filter(o -> o.getProposta().getEmailArtista().equals(email)).collect(Collectors.toList());
     }
 
     @GET
     @Path("evento/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public List<Notificacao> getNotEvento(@PathParam("id") int id) {
-        return repository.daoNotificacao.getAll().stream().filter(o -> repository.daoPropostas.get(o.getProposta().getId()).getIdEvento() == id).collect(Collectors.toList());
+        return repository.daoNotificacao.getAll().stream().filter(o -> o.getProposta().getIdEvento() == id).collect(Collectors.toList());
     }
 
     @GET
@@ -51,7 +51,7 @@ public class NotificacaoService {
     @Path("contratante/add")
     @Consumes({MediaType.APPLICATION_JSON})
     public boolean add(Notificacao notificacao) {
-        Notificacao not = new Notificacao(notificacao.getProposta());
+        Notificacao not = new Notificacao(notificacao.getProposta(), notificacao.getParaTipo());
         return repository.daoNotificacao.add(not);
     }
 

@@ -79,7 +79,7 @@ public class PropostasService {
                     return b && c && repository.daoPropostas.saveInFile();
                 }
                 return false;
-            } else return repository.daoNotificacao.add(new Notificacao(propostanew));
+            } else return repository.daoNotificacao.add(new Notificacao(propostanew,Notificacao.ARTISTA));
         } else return false;
     }
 
@@ -113,7 +113,7 @@ public class PropostasService {
                     return b && c && repository.daoPropostas.saveInFile();
                 }
                 return false;
-            } else return repository.daoNotificacao.add(new Notificacao(propostanew));
+            } else return repository.daoNotificacao.add(new Notificacao(propostanew,Notificacao.CONTRATANTE));
         } else return false;
     }
 
