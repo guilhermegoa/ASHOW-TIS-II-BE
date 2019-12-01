@@ -86,7 +86,7 @@ public class DaoEventos implements Serializable {
             if (evento.getEstilo() != null) contratante.setEstilo(evento.getEstilo());
             if (evento.getNome() != null) contratante.setNome(evento.getNome());
             if (evento.isOpen() != contratante.isOpen()) contratante.setOpen(evento.isOpen());
-            if (evento.getData() != null) contratante.setData(evento.getData());
+            if (evento.getDataEvento() != null) contratante.setDataEvento(evento.getDataEvento());
             if (evento.getEndereco() != null) contratante.setEndereco(evento.getEndereco());
             System.out.println("DEPOIS:" + contratante);
             return saveInFile();
@@ -134,5 +134,15 @@ public class DaoEventos implements Serializable {
 
     public boolean confirmarArtistaPendente(int id, String emailArtista) {
         return get(id).confirmarArtistaPendente(emailArtista) && saveInFile();
+    }
+
+    public boolean fecharEvento(int id) {
+        get(id).setOpen(false);
+        return saveInFile();
+    }
+
+    public boolean abrirEvento(int id) {
+        get(id).setOpen(true    );
+        return saveInFile();
     }
 }

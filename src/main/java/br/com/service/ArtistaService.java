@@ -41,7 +41,8 @@ public class ArtistaService {
                         artista.getSenha(),
                         artista.getEmail(),
                         artista.getEstilo(),
-                        artista.getTipoArtista());
+                        artista.getTipoArtista(),
+                        artista.getDataUriFoto());
         System.out.println(artistanew);
         boolean b = Repository.getINSTANCE().daoUsuarios.add(artistanew);
         boolean a = Repository.getINSTANCE().daoArtistas.add(artistanew);
@@ -102,5 +103,25 @@ public class ArtistaService {
         List<Evento> e = new ArrayList();
         Repository.getINSTANCE().daoArtistas.get(email).getEventos().forEach(o -> e.add(Repository.getINSTANCE().daoEventos.get(o)));
         return e;
+    }
+
+    @GET
+    @Path("filter/{style}/{min}/{max}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Artista> filter(@PathParam("style") String estiloURL, @PathParam("min") double min, @PathParam("max") double max){
+        List<Artista> filtrado = Repository.getINSTANCE().daoArtistas.getAll();
+        List<Artista> aux = new ArrayList<Artista>();
+        if(!(estiloURL.equals("@"))){
+            filtrado.stream().filter(e -> e.getEstilo() != null && e.getEstilo().toLowerCase().contains(estiloURL.toLowerCase()))
+                    .filter(e -> e.getValorPadrao() +1 >= min && e.getValorPadrao() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        } else{
+            filtrado.stream()
+                    .filter(e -> e.getValorPadrao() +1> min && e.getValorPadrao() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+        return filtrado;
     }
 }

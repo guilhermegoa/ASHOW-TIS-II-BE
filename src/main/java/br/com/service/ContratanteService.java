@@ -43,7 +43,7 @@ public class ContratanteService {
     public boolean add(Contratante contratante) {
         System.out.println("ADD Contratante:");
         Contratante newcontratante =
-                new Contratante(contratante.getNome(), contratante.getSenha(), contratante.getEmail());
+                new Contratante(contratante.getNome(), contratante.getSenha(), contratante.getEmail(), contratante.getDataUriFoto());
         System.out.println(newcontratante);
         boolean b = Repository.getINSTANCE().daoUsuarios.add(newcontratante);
         boolean a = Repository.getINSTANCE().daoContratantes.add(newcontratante);

@@ -6,6 +6,7 @@ import br.com.repository.Repository;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +19,40 @@ public class EventoService {
     @Produces({MediaType.APPLICATION_JSON})
     public List<Evento> getAll() {
         return repository.daoEventos.getAll();
+    }
+
+    @GET
+    @Path("filter/{style}/{local}/{min}/{max}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Evento> filter(@PathParam("style") String estilo, @PathParam("local") String local, @PathParam("min") double min, @PathParam("max") double max){
+        List<Evento> filtrado = repository.daoEventos.getAll();
+        List<Evento> aux = new ArrayList<Evento>();
+        if(!(estilo.equals("@")) &&!(local.equals("@"))){
+            filtrado.stream().filter(e -> e.getEstilo().toLowerCase().contains(estilo.toLowerCase()))
+                    .filter(e -> e.getEndereco().getCidade().toLowerCase().contains(local.toLowerCase()))
+                    .filter(e -> e.getValor() >= min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+        else if(!(local.equals("@"))){
+            filtrado.stream().filter(e -> e.getEndereco().getCidade().toLowerCase().contains(local.toLowerCase()))
+                    .filter(e -> e.getValor() >= min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+        else if(!(estilo.equals("@"))){
+            filtrado.stream().filter(e -> e.getEstilo().toLowerCase().contains(estilo.toLowerCase()))
+                    .filter(e -> e.getValor() > min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+        else{
+            filtrado.stream()
+                    .filter(e -> e.getValor() > min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+       return filtrado;
     }
 
     @GET
@@ -43,10 +78,11 @@ public class EventoService {
                             evento.getCapacidadeEsperada(),
                             evento.getValor(),
                             evento.getEstilo(),
-                            evento.getData(),
+                            evento.getDataEvento(),
                             evento.getEndereco(),
                             evento.getQuantidadeArtistas(),
-                            evento.getEmailContratante());
+                            evento.getEmailContratante(),
+                            evento.getDataUriFoto());
             boolean a = repository.daoContratantes.addEvento(eventonew, evento.getEmailContratante());
             boolean b = repository.daoEventos.add(eventonew);
             System.out.println(a);
@@ -79,8 +115,10 @@ public class EventoService {
             System.out.println(evento);
             if (evento != null) {
                 boolean a = repository.daoEventos.remove(evento);
+                boolean b = repository.daoContratantes.get(evento.getEmailContratante()).removeEvento(evento);
                 System.out.println(a);
-                return a;
+                System.out.println(b);
+                return a && b;
             } else return false;
         } else return false;
     }
@@ -121,4 +159,21 @@ public class EventoService {
         boolean a = repository.daoEventos.confirmarArtistaPendente(id, email);
         return a;
     }
+
+    @PUT
+    @Path("{id}/fechar")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean fecharEvento(@PathParam("id") int id) {
+        boolean a = repository.daoEventos.fecharEvento(id);
+        return a;
+    }
+
+    @PUT
+    @Path("{id}/abrir")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean abrirEvento(@PathParam("id") int id) {
+        boolean a = repository.daoEventos.abrirEvento(id);
+        return a;
+    }
+
 }
