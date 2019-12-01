@@ -131,4 +131,12 @@ public class EventoService {
         return a;
     }
 
+    @PUT
+    @Path("{id}/abrir")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean abrirEvento(@PathParam("id") int id) {
+        boolean a = repository.daoEventos.abrirEvento(id);
+        return a;
+    }
+
 }

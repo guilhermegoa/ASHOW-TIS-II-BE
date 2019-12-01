@@ -140,4 +140,9 @@ public class DaoEventos implements Serializable {
         get(id).setOpen(false);
         return saveInFile();
     }
+
+    public boolean abrirEvento(int id) {
+        get(id).setOpen(true    );
+        return saveInFile();
+    }
 }
