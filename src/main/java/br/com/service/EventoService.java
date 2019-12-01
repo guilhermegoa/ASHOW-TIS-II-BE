@@ -6,6 +6,7 @@ import br.com.repository.Repository;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +19,40 @@ public class EventoService {
     @Produces({MediaType.APPLICATION_JSON})
     public List<Evento> getAll() {
         return repository.daoEventos.getAll();
+    }
+
+    @GET
+    @Path("filter/{style}/{local}/{min}/{max}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Evento> filter(@PathParam("style") String estilo, @PathParam("local") String local, @PathParam("min") double min, @PathParam("max") double max){
+        List<Evento> filtrado = repository.daoEventos.getAll();
+        List<Evento> aux = new ArrayList<Evento>();
+        if(!(estilo.equals("@")) &&!(local.equals("@"))){
+            filtrado.stream().filter(e -> e.getEstilo().toLowerCase().contains(estilo.toLowerCase()))
+                    .filter(e -> e.getEndereco().getCidade().toLowerCase().contains(local.toLowerCase()))
+                    .filter(e -> e.getValor() >= min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+        else if(!(local.equals("@"))){
+            filtrado.stream().filter(e -> e.getEndereco().getCidade().toLowerCase().contains(local.toLowerCase()))
+                    .filter(e -> e.getValor() >= min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+        else if(!(estilo.equals("@"))){
+            filtrado.stream().filter(e -> e.getEstilo().toLowerCase().contains(estilo.toLowerCase()))
+                    .filter(e -> e.getValor() > min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+        else{
+            filtrado.stream()
+                    .filter(e -> e.getValor() > min && e.getValor() <= max)
+                    .forEach(e -> aux.add(e));
+            filtrado = aux;
+        }
+       return filtrado;
     }
 
     @GET
