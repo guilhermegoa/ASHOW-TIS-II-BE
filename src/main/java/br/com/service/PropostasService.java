@@ -144,6 +144,8 @@ public class PropostasService {
                 boolean a = repository.daoPropostas.remove(proposta);
                 boolean b = false;
                 boolean c = repository.daoArtistas.get(proposta.getEmailArtista()).removeEvento(repository.daoEventos.get(proposta.getIdEvento()));
+                boolean d = repository.daoNotificacao.getAll().removeIf(o->o.getProposta().getIdEvento() == proposta.getIdEvento());
+                boolean e = repository.daoNotificacao.saveInFile();
                 Set<String> artistasPenDoEvento = repository.daoEventos.get(proposta.getIdEvento()).getEmailArtistasPendente();
                 Set<String> artistasConfDoEvento = repository.daoEventos.get(proposta.getIdEvento()).getEmailArtistasConfirmados();
                 if (artistasPenDoEvento.contains(proposta.getEmailArtista())) {
@@ -151,17 +153,23 @@ public class PropostasService {
                     System.out.println(a);
                     System.out.println(b);
                     System.out.println(c);
-                    return a && b && c && repository.daoEventos.saveInFile();
+                    System.out.println(d);
+                    System.out.println(e);
+                    return a && b && e && d && c && repository.daoEventos.saveInFile();
                 } else if (artistasConfDoEvento.contains(proposta.getEmailArtista())) {
                     b = artistasConfDoEvento.removeIf(o -> o.equals(proposta.getEmailArtista()));
                     System.out.println(a);
                     System.out.println(b);
                     System.out.println(c);
-                    return a && b && c && repository.daoEventos.saveInFile();
+                    System.out.println(d);
+                    System.out.println(e);
+                    return a && b && e && d && c && repository.daoEventos.saveInFile();
                 }
                 System.out.println(a);
                 System.out.println(c);
-                return a && c && repository.daoEventos.saveInFile();
+                System.out.println(d);
+                System.out.println(e);
+                return a && c && e && d && repository.daoEventos.saveInFile();
             } else return false;
         } else return false;
     }

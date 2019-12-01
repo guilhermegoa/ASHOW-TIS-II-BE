@@ -48,7 +48,7 @@ public class NotificacaoService {
     }
 
     @POST
-    @Path("contratante/add")
+    @Path("add")
     @Consumes({MediaType.APPLICATION_JSON})
     public boolean add(Notificacao notificacao) {
         Notificacao not = new Notificacao(notificacao.getProposta(), notificacao.getParaTipo());
@@ -147,5 +147,12 @@ public class NotificacaoService {
                 return a;
             } else return false;
         } else return false;
+    }
+
+    @PUT
+    @Path("visualizar/{id}")
+    @Produces({MediaType.TEXT_PLAIN})
+    public boolean visualzar(@PathParam("id") int id) {
+        return repository.daoNotificacao.vizualizar(id);
     }
 }
