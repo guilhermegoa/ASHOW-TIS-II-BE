@@ -86,7 +86,7 @@ public class DaoEventos implements Serializable {
             if (evento.getEstilo() != null) contratante.setEstilo(evento.getEstilo());
             if (evento.getNome() != null) contratante.setNome(evento.getNome());
             if (evento.isOpen() != contratante.isOpen()) contratante.setOpen(evento.isOpen());
-            if (evento.getData() != null) contratante.setData(evento.getData());
+            if (evento.getDataEvento() != null) contratante.setDataEvento(evento.getDataEvento());
             if (evento.getEndereco() != null) contratante.setEndereco(evento.getEndereco());
             System.out.println("DEPOIS:" + contratante);
             return saveInFile();

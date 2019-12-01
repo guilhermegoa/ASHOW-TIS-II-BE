@@ -16,7 +16,8 @@ public class Evento implements Serializable {
     private String nome;
     private boolean open;
     private boolean finalizado;
-    private LocalDateTime data;
+    private LocalDateTime dataEvento;
+    private LocalDateTime dataCriacao;
     private Endereco endereco;
     private String emailContratante;
     private Set<String> emailArtistasPendente = new LinkedHashSet<>();
@@ -25,7 +26,8 @@ public class Evento implements Serializable {
     public Evento() {
     }
 
-    public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime data, Endereco endereco, int quantidadeArtistas, String emailContratante, String dataUriFoto) {
+    public Evento(String nome, int capacidadeEsperada, double valor, String estilo, LocalDateTime dataEvento, Endereco endereco, int quantidadeArtistas, String emailContratante, String dataUriFoto) {
+        setDataCriacao(LocalDateTime.now());
         setDataUriFoto(dataUriFoto);
         setEmailContratante(emailContratante);
         setQuantidadeArtistas(quantidadeArtistas);
@@ -33,7 +35,7 @@ public class Evento implements Serializable {
         setCapacidadeEsperada(capacidadeEsperada);
         setValor(valor);
         setEstilo(estilo);
-        setData(data);
+        setDataEvento(dataEvento);
         setEndereco(endereco);
         maxIDEventos++;
         setId(getMaxIDEventos());
@@ -46,6 +48,14 @@ public class Evento implements Serializable {
 
     public static void setMaxIDEventos(int maxIDEventos) {
         Evento.maxIDEventos = maxIDEventos;
+    }
+
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(LocalDateTime dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
     public String getDataUriFoto() {
@@ -135,7 +145,7 @@ public class Evento implements Serializable {
     }
 
     public void abrirCandidatura() {
-        if (!(this.data.isAfter(LocalDateTime.now()))) {
+        if (!(this.dataEvento.isAfter(LocalDateTime.now()))) {
             setOpen(true);
         }
     }
@@ -174,12 +184,12 @@ public class Evento implements Serializable {
         this.estilo = estilo;
     }
 
-    public LocalDateTime getData() {
-        return data;
+    public LocalDateTime getDataEvento() {
+        return dataEvento;
     }
 
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setDataEvento(LocalDateTime dataEvento) {
+        this.dataEvento = dataEvento;
     }
 
     public void setMaxIDEvento(int cont) {

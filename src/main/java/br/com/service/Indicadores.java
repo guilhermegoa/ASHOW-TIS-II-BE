@@ -17,11 +17,15 @@ public class Indicadores {
 
     private Indicadores() {
         propocaoArtistasContratantes = ((double) repository.daoArtistas.getAll().size()) / ((double) repository.daoContratantes.getAll().size());
+
+
         final int[] qntArtistas = {0};
         if (repository.daoEventos.getAll().size()>0) {
             repository.daoEventos.getAll().stream().filter(o -> (o.getEmailArtistasConfirmados().size() > 0) && !o.isOpen()).forEach(o -> qntArtistas[0] += o.getEmailArtistasConfirmados().size());
             mediaDeValorPorContrato = repository.daoEventos.getAll().stream().filter(o -> (o.getEmailArtistasConfirmados().size() > 0) && !o.isOpen()).mapToDouble(Evento::getValor).sum()/ ((double) qntArtistas[0]);
         } else mediaDeValorPorContrato = 0;
+
+//        mediaEventosCriadosMensal = repository.daoEventos.getAll().stream().map(Evento::getDataCriacao).sorted().
     }
 
     public static Indicadores getInstance() {

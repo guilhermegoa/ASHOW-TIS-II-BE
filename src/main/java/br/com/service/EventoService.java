@@ -43,7 +43,7 @@ public class EventoService {
                             evento.getCapacidadeEsperada(),
                             evento.getValor(),
                             evento.getEstilo(),
-                            evento.getData(),
+                            evento.getDataEvento(),
                             evento.getEndereco(),
                             evento.getQuantidadeArtistas(),
                             evento.getEmailContratante(),
@@ -80,8 +80,10 @@ public class EventoService {
             System.out.println(evento);
             if (evento != null) {
                 boolean a = repository.daoEventos.remove(evento);
+                boolean b = repository.daoContratantes.get(evento.getEmailContratante()).removeEvento(evento);
                 System.out.println(a);
-                return a;
+                System.out.println(b);
+                return a && b;
             } else return false;
         } else return false;
     }
