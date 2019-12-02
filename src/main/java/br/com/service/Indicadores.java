@@ -18,7 +18,6 @@ public class Indicadores {
     private Indicadores() {
         propocaoArtistasContratantes = ((double) repository.daoArtistas.getAll().size()) / ((double) repository.daoContratantes.getAll().size());
 
-
         final int[] qntArtistas = {0};
         if (repository.daoEventos.getAll().size()>0) {
             repository.daoEventos.getAll().stream().filter(o -> (o.getEmailArtistasConfirmados().size() > 0) && !o.isOpen()).forEach(o -> qntArtistas[0] += o.getEmailArtistasConfirmados().size());
