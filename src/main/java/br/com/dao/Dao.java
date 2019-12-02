@@ -101,6 +101,10 @@ public abstract class Dao<T extends Usuario, K> implements Serializable {
                 artista.setDescricao(artistaAlterado.getDescricao());
             if (artistaAlterado.getContatoPublico() != null)
                 artista.setContatoPublico(artistaAlterado.getContatoPublico());
+            if(artistaAlterado.getDataUriFoto() != null)
+                artista.setDataUriFoto(artistaAlterado.getDataUriFoto());
+            if(artistaAlterado.getEventos() != null) artista.setAvaliacoes(artistaAlterado.getAvaliacoes());
+            if(artistaAlterado.getAvaliacoes() != null) artista.setAvaliacoes(artistaAlterado.getAvaliacoes());
             System.out.println("DEPOIS:" + artista);
             return saveInFile();
         } else return false;
@@ -122,6 +126,12 @@ public abstract class Dao<T extends Usuario, K> implements Serializable {
                 contratante.setSenha(contratanteAlterado.getSenha());
             if (contratanteAlterado.getEmail() != null)
                 contratante.setEmail(contratanteAlterado.getEmail());
+            if (contratanteAlterado.getDataUriFoto() != null)
+                contratante.setDataUriFoto(contratanteAlterado.getDataUriFoto());
+            if(contratanteAlterado.getAvaliacoes() != null)
+                contratante.setAvaliacoes(contratanteAlterado.getAvaliacoes());
+            if(contratanteAlterado.getEventos() != null)
+                contratante.setEventos(contratanteAlterado.getEventos());
             System.out.println("DEPOIS:" + contratante);
             return saveInFile();
         } else return false;

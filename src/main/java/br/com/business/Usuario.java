@@ -177,4 +177,12 @@ public abstract class Usuario implements Serializable {
     public boolean removeEvento(Evento evento) {
         return eventos.remove(((Integer) evento.getId()));
     }
+
+    public void setAvaliacoes(Collection<Avaliacao> avaliacoes) {
+        this.avaliacoes = avaliacoes;
+    }
+
+    public void setEventos(List<Integer> eventos) {
+        this.eventos = eventos;
+    }
 }

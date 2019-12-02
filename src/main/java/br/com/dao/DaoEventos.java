@@ -83,11 +83,17 @@ public class DaoEventos implements Serializable {
             if (evento.getQuantidadeArtistas() != contratante.getQuantidadeArtistas())
                 contratante.setQuantidadeArtistas(evento.getQuantidadeArtistas());
             if (evento.getValor() != contratante.getValor()) contratante.setValor(evento.getValor());
+            if(evento.getDataUriFoto() != contratante.getDataUriFoto()) contratante.setDataUriFoto(evento.getDataUriFoto());
             if (evento.getEstilo() != null) contratante.setEstilo(evento.getEstilo());
             if (evento.getNome() != null) contratante.setNome(evento.getNome());
             if (evento.isOpen() != contratante.isOpen()) contratante.setOpen(evento.isOpen());
+            if(evento.isFinalizado() != contratante.isFinalizado()) contratante.setFinalizado(evento.isFinalizado());
             if (evento.getDataEvento() != null) contratante.setDataEvento(evento.getDataEvento());
+            if (evento.getDataCriacao() != contratante.getDataCriacao()) contratante.setDataCriacao(contratante.getDataCriacao());
             if (evento.getEndereco() != null) contratante.setEndereco(evento.getEndereco());
+            if(evento.getEmailContratante() != contratante.getEmailContratante()) contratante.setEmailContratante(evento.getEmailContratante());
+            if (!(evento.getEmailArtistasConfirmados().equals(contratante.getEmailArtistasConfirmados()))) contratante.setEmailArtistasConfirmados(evento.getEmailArtistasConfirmados());
+            if (!(evento.getEmailArtistasPendente().equals(contratante.getEmailArtistasPendente()))) contratante.setEmailArtistasPendente(evento.getEmailArtistasPendente());
             System.out.println("DEPOIS:" + contratante);
             return saveInFile();
         } else return false;
