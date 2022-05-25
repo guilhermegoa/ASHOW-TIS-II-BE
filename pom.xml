@@ -105,7 +105,7 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
-            <version>9.4.19.v20190610</version>
+            <version>9.4.46.v20220331</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.test-framework.providers/jersey-test-framework-provider-jetty -->
         <dependency>
